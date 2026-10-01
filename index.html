@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aktivitas Digital - Kreatif, Interaktif, Berkembang</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --neon-cyan: #00f2fe;
+            --neon-purple: #7928ca;
+            --neon-pink: #ff007f;
+            --dark-bg: #05050a;
+            --card-glass: rgba(18, 18, 30, 0.75);
+            --text-main: #f1f5f9;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-main);
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Interactive Canvas Background */
+        #particle-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -2;
+            pointer-events: none;
+        }
+
+        /* Glowing Background Ambient Orbs */
+        .ambient-glow {
+            position: fixed;
+            width: 45vw;
+            height: 45vw;
+            border-radius: 50%;
+            filter: blur(100px);
+            z-index: -1;
+            opacity: 0.18;
+            pointer-events: none;
+            animation: orbMove 12s infinite alternate ease-in-out;
+        }
+
+        .orb-1 {
+            top: -10%;
+            left: -10%;
+            background: var(--neon-cyan);
+        }
+
+        .orb-2 {
+            bottom: -10%;
+            right: -10%;
+            background: var(--neon-pink);
+            animation-delay: -6s;
+        }
+
+        @keyframes orbMove {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(50px, 50px) scale(1.15); }
+        }
+
+        /* Ultra Glassmorphism Navbar */
+        .navbar {
+            background: rgba(10, 10, 20, 0.8) !important;
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand {
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--neon-cyan), var(--neon-pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 1.6rem;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-link {
+            font-weight: 600;
+            color: #94a3b8 !important;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            padding: 8px 18px !important;
+            border-radius: 50rem;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: #fff !important;
+            background: linear-gradient(135deg, rgba(0, 242, 254, 0.15), rgba(121, 40, 202, 0.15));
+            border: 1px solid rgba(0, 242, 254, 0.3);
+            box-shadow: 0 0 15px rgba(0, 242, 254, 0.2);
+        }
+
+        /* Hero Section Modern & Cyber */
+        .hero-section {
+            padding: 120px 0 90px;
+            position: relative;
+        }
+
+        .hero-title {
+            font-weight: 800;
+            letter-spacing: -1.5px;
+            line-height: 1.2;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, var(--neon-cyan), var(--neon-pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Creative Neon Buttons */
+        .btn-neon {
+            background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
+            color: white;
+            border: none;
+            font-weight: 700;
+            padding: 12px 32px;
+            border-radius: 50rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 0 25px rgba(0, 242, 254, 0.35);
+        }
+
+        .btn-neon:hover {
+            color: white;
+            transform: translateY(-4px);
+            box-shadow: 0 0 35px rgba(255, 0, 127, 0.5);
+            background: linear-gradient(135deg, var(--neon-purple), var(--neon-pink));
+        }
+
+        .badge-cyber {
+            background: rgba(0, 242, 254, 0.1);
+            color: var(--neon-cyan);
+            border: 1px solid rgba(0, 242, 254, 0.3);
+            font-weight: 700;
+            font-size: 0.85rem;
+            padding: 8px 20px;
+            border-radius: 50rem;
+            box-shadow: 0 0 15px rgba(0, 242, 254, 0.15);
+            display: inline-block;
+        }
+
+        /* Cyber Glass Cards */
+        .cyber-card {
+            background: var(--card-glass);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 1.75rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cyber-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--neon-cyan), var(--neon-pink));
+            opacity: 0.4;
+            transition: opacity 0.3s ease;
+        }
+
+        .cyber-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(0, 242, 254, 0.4);
+            box-shadow: 0 20px 45px rgba(0, 242, 254, 0.18);
+        }
+
+        .cyber-card:hover::before {
+            opacity: 1;
+        }
+
+        /* Floating Animation */
+        @keyframes floatSlow {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(1deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+
+        .floating-element {
+            animation: floatSlow 5s ease-in-out infinite;
+        }
+
+        /* Promo Banner Neon */
+        .promo-banner-neon {
+            background: linear-gradient(135deg, rgba(18, 18, 30, 0.9), rgba(30, 20, 50, 0.9));
+            border: 1px solid rgba(255, 0, 127, 0.3);
+            border-radius: 2rem;
+            box-shadow: 0 20px 50px rgba(255, 0, 127, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .promo-banner-neon::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 6px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--neon-cyan), var(--neon-pink));
+        }
+
+        /* Download Creative Box */
+        .download-cyber-box {
+            background: linear-gradient(135deg, #0b0b16 0%, #170f2c 100%);
+            border-radius: 2.25rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(0, 242, 254, 0.25);
+        }
+
+        /* Page Management */
+        .page-content {
+            display: none;
+            animation: fadeInPage 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            min-height: 75vh;
+        }
+
+        .page-content.active-page {
+            display: block;
+        }
+
+        @keyframes fadeInPage {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Footer Creative */
+        footer {
+            background-color: #030308;
+            color: #94a3b8;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        footer h5 {
+            color: #fff;
+            font-weight: 700;
+        }
+
+        footer a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        footer a:hover {
+            color: var(--neon-cyan);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Interactive Particle Background Canvas -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Ambient Glow Orbs -->
+    <div class="ambient-glow orb-1"></div>
+    <div class="ambient-glow orb-2"></div>
+
+    <!-- Navigation Header -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top py-3">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2" onclick="switchPage('home')" style="cursor: pointer;">
+                <i class="fa-solid fa-meteor floating-element text-info"></i> Aktivitas Digital
+            </a>
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-lg-center gap-lg-2 my-2 my-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" onclick="switchPage('home')" id="nav-home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" onclick="switchPage('services')" id="nav-services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" onclick="switchPage('about')" id="nav-about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" onclick="switchPage('blog')" id="nav-blog">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" onclick="switchPage('contact')" id="nav-contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ================= PAGE 1: HOME ================= -->
+    <div id="page-home" class="page-content active-page">
+        <!-- Hero Section -->
+        <header class="hero-section text-center">
+            <div class="container py-4">
+                <div class="row justify-content-center">
+                    <div class="col-lg-9">
+                        <div class="mb-4">
+                            <span class="badge-cyber"><i class="fa-solid fa-wand-magic-sparkles me-2"></i> Ekosistem Kreatif Berbasis AI & Interaktif</span>
+                        </div>
+                        <h1 class="hero-title display-4 mb-4 text-white">
+                            Kreativitas Tanpa Batas, <span class="gradient-text">Kolaborasi Tanpa Henti</span>
+                        </h1>
+                        <p class="lead text-secondary mb-5 px-lg-4 fs-5" style="line-height: 1.8;">
+                            Aplikasi representatif untuk seluruh aktivitas kreatif, produktif, dan bisnis era digital. Bantu UMKM, mahasiswa, pelajar, dan kreator berkembang bersama teknologi masa kini.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Services Summary -->
+        <section class="py-5 position-relative">
+            <div class="container py-4">
+                <div class="text-center mb-5">
+                    <span class="text-uppercase fw-bold text-info tracking-wider small">Kunci Sukses Bisnis Digital Anda</span>
+                    <h2 class="fw-bold display-6 mt-1 text-white">Platforn Terpadu Untuk Kebutuhan Bisnis Anda</h2>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="cyber-card p-4 h-100 text-center">
+                            <div class="text-info fs-1 mb-3 floating-element"><i class="fa-solid fa-microchip"></i></div>
+                            <h4 class="h5 fw-bold mb-3 text-white">Berkreasi</h4>
+                            <p class="text-secondary small mb-0" style="line-height: 1.7;">Wujudkan ide kreatif, skrip promosi, dan caption media sosial yang menarik secara instan.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="cyber-card p-4 h-100 text-center">
+                            <div class="fs-1 mb-3 floating-element" style="color: #c084fc; animation-delay: 0.5s;"><i class="fa-solid fa-calendar-week"></i></div>
+                            <h4 class="h5 fw-bold mb-3 text-white">Berkolaborasi</h4>
+                            <p class="text-secondary small mb-0" style="line-height: 1.7;">Rencanakan jadwal posting dan kampanye digital produk usaha Anda dengan rapi.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="cyber-card p-4 h-100 text-center">
+                            <div class="text-success fs-1 mb-3 floating-element" style="animation-delay: 1s;"><i class="fa-solid fa-users-rays"></i></div>
+                            <h4 class="h5 fw-bold mb-3 text-white">Bertumbuh</h4>
+                            <p class="text-secondary small mb-0" style="line-height: 1.7;">Perkuat koordinasi tim atau kelompok belajar Anda untuk mencapai perkembangan yang berkelanjutan.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects & Clients -->
+        <section class="py-5">
+            <div class="container py-4">
+                <div class="text-center mb-5">
+                    <span class="text-uppercase fw-bold tracking-wider small" style="color: #f472b6;">Portofolio Lapangan</span>
+                    <h2 class="fw-bold display-6 mt-1 text-white">Project & Dokumentasi Lapangan</h2>
+                    <p class="text-secondary">Galeri foto dan video aktivitas pendampingan digital yang telah kami laksanakan</p>
+                </div>
+
+                <div class="row g-4 mb-5">
+                    <div class="col-md-4">
+                        <div class="cyber-card h-100">
+                            <div class="ratio ratio-16x9 bg-dark overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=600&q=80" class="w-100 h-100 object-fit-cover" alt="Digitalisasi UMKM">
+                            </div>
+                            <div class="p-4">
+                                <span class="badge bg-info bg-opacity-15 text-info mb-2 px-3 py-1 rounded-pill fw-semibold">UMKM Lokal</span>
+                                <h4 class="h6 fw-bold mt-1 text-white">Pendampingan Digitalisasi 100+ UMKM</h4>
+                                <p class="text-secondary small mb-0">Pelatihan langsung implementasi promosi digital dan manajemen toko online.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="cyber-card h-100">
+                            <div class="ratio ratio-16x9 bg-dark">
+                                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Pelatihan Kampus" allowfullscreen class="border-0"></iframe>
+                            </div>
+                            <div class="p-4">
+                                <span class="badge mb-2 px-3 py-1 rounded-pill fw-semibold" style="background-color: rgba(192, 132, 252, 0.15); color: #c084fc;">Vokasi & Kampus</span>
+                                <h4 class="h6 fw-bold mt-1 text-white">Pelatihan Content Planner Mahasiswa</h4>
+                                <p class="text-secondary small mb-0">Workshop pembuatan strategi konten media sosial bersama mahasiswa vokasi.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="cyber-card h-100">
+                            <div class="ratio ratio-16x9 bg-dark overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=600&q=80" class="w-100 h-100 object-fit-cover" alt="Workshop SMK">
+                            </div>
+                            <div class="p-4">
+                                <span class="badge bg-success bg-opacity-15 text-success mb-2 px-3 py-1 rounded-pill fw-semibold">SMK Multimedia</span>
+                                <h4 class="h6 fw-bold mt-1 text-white">Kurasi Toolkit Kreatif Pelajar</h4>
+                                <p class="text-secondary small mb-0">Pengenalan perangkat dan aplikasi pendukung produktivitas sejak bangku sekolah.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bagian Klien & Partner -->
+                <div class="row align-items-center mb-5">
+                    <div class="col-12">
+                        <div class="cyber-card p-4 p-md-5">
+                            <h5 class="fw-bold mb-2 text-center text-white">Klien & Partner Kerja Sama</h5>
+                            <p class="text-muted small text-center mb-4">Didukung oleh berbagai instansi, UMKM, dan komunitas terpercaya</p>
+                            
+                            <div class="row g-3 justify-content-center">
+                                <div class="col-6 col-md-3">
+                                    <div class="p-3 border border-secondary border-opacity-25 rounded-3 text-center bg-black bg-opacity-40 h-100 d-flex flex-column align-items-center justify-content-center">
+                                        <div class="text-info fs-3 mb-2"><i class="fa-solid fa-store"></i></div>
+                                        <span class="fw-semibold small text-white">UMKM Mandiri Solo</span>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-3">
+                                    <div class="p-3 border border-secondary border-opacity-25 rounded-3 text-center bg-black bg-opacity-40 h-100 d-flex flex-column align-items-center justify-content-center">
+                                        <div class="fs-3 mb-2" style="color: #c084fc;"><i class="fa-solid fa-users-rectangle"></i></div>
+                                        <span class="fw-semibold small text-white">Komunitas Kreator Muda</span>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-3">
+                                    <div class="p-3 border border-secondary border-opacity-25 rounded-3 text-center bg-black bg-opacity-40 h-100 d-flex flex-column align-items-center justify-content-center">
+                                        <div class="text-success fs-3 mb-2"><i class="fa-solid fa-graduation-cap"></i></div>
+                                        <span class="fw-semibold small text-white">Kampus Digital Nusantara</span>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-3">
+                                    <div class="p-3 border border-secondary border-opacity-25 rounded-3 text-center bg-black bg-opacity-40 h-100 d-flex flex-column align-items-center justify-content-center">
+                                        <div class="text-warning fs-3 mb-2"><i class="fa-solid fa-clapperboard"></i></div>
+                                        <span class="fw-semibold small text-white">Studio Konten Kreatif</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Profil Kurator & Editor -->
+                <div class="mt-5">
+                    <div class="text-center mb-4">
+                        <h3 class="fw-bold text-white">Profil Kurator & Editor Tim</h3>
+                        <p class="text-muted small">Para praktisi yang mendedikasikan keahliannya untuk pengembangan ekosistem ini</p>
+                    </div>
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div class="cyber-card h-100 text-center p-4">
+                                <div class="pt-2 pb-3">
+                                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" class="rounded-circle shadow-sm border border-2 border-info object-fit-cover" style="width: 95px; height: 95px;" alt="Rian Pratama">
+                                </div>
+                                <h5 class="fw-bold mb-1 text-white">Rian Pratama, S.Mn.</h5>
+                                <span class="badge bg-info bg-opacity-15 text-info mb-3 px-3 py-1 rounded-pill">Lead Product & Strategy</span>
+                                <p class="text-secondary small mb-0">Praktisi bisnis digital dan pemerhati strategi UMKM yang fokus pada efisiensi kerja kreator.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="cyber-card h-100 text-center p-4">
+                                <div class="pt-2 pb-3">
+                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" class="rounded-circle shadow-sm border border-2 border-purple object-fit-cover" style="width: 95px; height: 95px; border-color: #c084fc !important;" alt="Dinda Kirana">
+                                </div>
+                                <h5 class="fw-bold mb-1 text-white">Dinda Kirana, S.Kom.</h5>
+                                <span class="badge mb-3 px-3 py-1 rounded-pill" style="background-color: rgba(192, 132, 252, 0.15); color: #c084fc;">Lead UI/UX & Developer</span>
+                                <p class="text-secondary small mb-0">Pengembang antarmuka web dan aplikasi seluler yang berdedikasi menciptakan pengalaman interaktif.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="cyber-card h-100 text-center p-4">
+                                <div class="pt-2 pb-3">
+                                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" class="rounded-circle shadow-sm border border-2 border-success object-fit-cover" style="width: 95px; height: 95px;" alt="Ahmad Fauzi">
+                                </div>
+                                <h5 class="fw-bold mb-1 text-white">Ahmad Fauzi, M.I.Kom.</h5>
+                                <span class="badge bg-success bg-opacity-15 text-success mb-3 px-3 py-1 rounded-pill">Content & Media Specialist</span>
+                                <p class="text-secondary small mb-0">Spesialis komunikasi media sosial dan riset tren konten organik yang berpengampingan langsung.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- BAGIAN DOWNLOAD APK -->
+        <section class="py-5">
+            <div class="container py-4">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="download-cyber-box p-4 p-md-5 text-white text-center">
+                            
+                            <div class="mb-4 position-relative d-inline-block">
+                                <div class="position-absolute top-50 start-50 translate-middle rounded-circle bg-info opacity-25" style="width: 90px; height: 90px; filter: blur(20px);"></div>
+                                <div class="p-3 rounded-4 shadow-lg border border-info border-opacity-50 d-inline-flex align-items-center justify-content-center text-white floating-element" style="background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple)); width: 75px; height: 75px; font-size: 2rem;">
+                                    <i class="fa-solid fa-mobile-screen-button"></i>
+                                </div>
+                            </div>
+
+                            <div>
+                                <span class="badge bg-white text-dark px-3 py-1 rounded-pill mb-3 fw-bold small">Eksklusif Akses Langsung</span>
+                            </div>
+
+                            <h3 class="fw-bold display-6 mb-3 text-white">Aktivitas Digital APK</h3>
+                            
+                            <p class="text-white-50 small mb-4 col-md-10 mx-auto" style="line-height: 1.7;">
+                                Nikmati pengalaman produktivitas dalam genggaman. File APK terenkripsi dikirim secara privat, aman, dan langsung ke WhatsApp Anda.
+                            </p>
+
+                            <div class="mb-4">
+                                <div class="d-inline-flex align-items-center gap-2 px-3 py-2 rounded-pill bg-black bg-opacity-50 border border-success border-opacity-50 text-success small">
+                                    <i class="fa-solid fa-shield-halved"></i> 
+                                    <span>100% Aman, Terverifikasi & Bebas Virus</span>
+                                </div>
+                            </div>
+
+                            <div>
+                                <a href="https://wa.me/6285732783289?text=Halo%2C%20saya%20ingin%20mendapatkan%20file%20APK%20Aktivitas%20Digital." target="_blank" class="btn btn-neon btn-lg rounded-pill px-5 py-3 shadow-lg w-100 w-md-auto text-white">
+                                    <i class="fa-brands fa-whatsapp me-2 fs-5"></i> Dapatkan APK via WhatsApp
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ================= PAGE 2: SERVICES ================= -->
+    <div id="page-services" class="page-content">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <span class="badge-cyber mb-2">Layanan Pilihan Anda</span>
+                <h2 class="fw-bold display-6 text-white">Modul & Fitur Khusus Terpilih</h2>
+                <p class="text-secondary col-lg-7 mx-auto">Fokus penuh pada AI Content Generator, Tools Kreator Pro, Keamanan & Privasi Data, serta Dukungan Komunitas.</p>
+            </div>
+
+            <!-- Promo Banner Neon -->
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-10">
+                    <div class="promo-banner-neon p-4 p-md-5">
+                        <div class="row align-items-center">
+                            <div class="col-md-8 mb-3 mb-md-0">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <span class="badge bg-danger px-2.5 py-1 small fw-bold rounded-pill"><i class="fa-solid fa-bolt me-1"></i> Penawaran Terbatas</span>
+                                    <span class="text-muted small">Eksklusif Hari Ini</span>
+                                </div>
+                                <h3 class="fw-bold text-white h4 mb-2">Diskon Spesial 50% untuk Pengguna Baru APK</h3>
+                                <p class="text-secondary small mb-0" style="line-height: 1.6;">Dapatkan akses modul pilihan Anda, pembaruan otomatis seumur hidup, dan panduan privat langsung via WhatsApp.</p>
+                            </div>
+                            <div class="col-md-4 text-md-end">
+                                <a href="https://wa.me/6285732783289?text=Halo%2C%20saya%20ingin%20klaim%20diskon%2050%25%20untuk%20pembelian%20APK%20Aktivitas%20Digital." target="_blank" class="btn btn-neon rounded-pill px-4 py-2 w-100">
+                                    <i class="fa-brands fa-whatsapp me-1"></i> Klaim Promo Sekarang
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grid 4 Layanan Pilihan -->
+            <div class="row g-4 justify-content-center mb-5">
+                <div class="col-md-6 col-lg-3">
+                    <div class="cyber-card p-4 h-100 text-center">
+                        <div class="text-info fs-1 mb-3 floating-element"><i class="fa-solid fa-robot"></i></div>
+                        <h4 class="h5 fw-bold mb-3 text-white">AI Content Generator</h4>
+                        <p class="text-secondary small mb-0" style="line-height: 1.7;">Asisten cerdas pembuat teks, ide judul konten, dan draf strategi pemasaran dalam hitungan detik.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="cyber-card p-4 h-100 text-center">
+                        <div class="fs-1 mb-3 floating-element" style="color: #c084fc; animation-delay: 0.3s;"><i class="fa-solid fa-toolbox"></i></div>
+                        <h4 class="h5 fw-bold mb-3 text-white">Tools Kreator Pro</h4>
+                        <p class="text-secondary small mb-0" style="line-height: 1.7;">Perangkat pendukung analisis performa media sosial, manajemen portofolio digital, dan rekapitulasi data.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="cyber-card p-4 h-100 text-center">
+                        <div class="text-warning fs-1 mb-3 floating-element" style="animation-delay: 0.6s;"><i class="fa-solid fa-shield-cat"></i></div>
+                        <h4 class="h5 fw-bold mb-3 text-white">Keamanan & Privasi Data</h4>
+                        <p class="text-secondary small mb-0" style="line-height: 1.7;">Protokol enkripsi data lokal dan pengiriman berkas aman langsung ke perangkat pengguna.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="cyber-card p-4 h-100 text-center">
+                        <div class="text-success fs-1 mb-3 floating-element" style="animation-delay: 0.9s;"><i class="fa-solid fa-headset"></i></div>
+                        <h4 class="h5 fw-bold mb-3 text-white">Dukungan Komunitas</h4>
+                        <p class="text-secondary small mb-0" style="line-height: 1.7;">Akses forum konsultasi langsung dan bimbingan teknis bersama para ahli dan mentor berpengalaman.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SPESIFIKASI EDITOR -->
+            <div class="row justify-content-center mt-5">
+                <div class="col-lg-10">
+                    <div class="cyber-card p-4 p-md-5">
+                        <div class="text-center mb-4">
+                            <span class="badge mb-2 px-3 py-1 rounded-pill fw-semibold" style="background-color: rgba(192, 132, 252, 0.15); color: #c084fc;">Standar Teknis</span>
+                            <h3 class="fw-bold h4 text-white">Spesifikasi Editor & Perangkat Kerja</h3>
+                            <p class="text-muted small">Standar arsitektur teknis dan editor yang digunakan dalam pengembangan modul layanan</p>
+                        </div>
+
+                        <div class="row g-4">
+                            <div class="col-md-4 text-center">
+                                <div class="p-4 border border-secondary border-opacity-25 rounded-4 bg-black bg-opacity-40 h-100">
+                                    <div class="text-info fs-2 mb-2"><i class="fa-solid fa-code"></i></div>
+                                    <h5 class="h6 fw-bold mb-2 text-white">Frontend & Scripting</h5>
+                                    <p class="text-secondary small mb-0">HTML5, CSS3, JavaScript (ES6+), dan Bootstrap 5 framework untuk performa UI responsif.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <div class="p-4 border border-secondary border-opacity-25 rounded-4 bg-black bg-opacity-40 h-100">
+                                    <div class="fs-2 mb-2" style="color: #c084fc;"><i class="fa-solid fa-laptop-code"></i></div>
+                                    <h5 class="h6 fw-bold mb-2 text-white">Editor Lingkungan Kerja</h5>
+                                    <p class="text-secondary small mb-0">Visual Studio Code dengan ekstensi kustom linter, live server, dan optimasi aset digital.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <div class="p-4 border border-secondary border-opacity-25 rounded-4 bg-black bg-opacity-40 h-100">
+                                    <div class="text-success fs-2 mb-2"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                                    <h5 class="h6 fw-bold mb-2 text-white">Integrasi AI & Pipeline</h5>
+                                    <p class="text-secondary small mb-0">Modul prompt terstruktur, manajemen local storage, serta validasi data JSON real-time.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ================= PAGE 3: ABOUT US ================= -->
+    <div id="page-about" class="page-content">
+        <div class="container py-5">
+            <div class="row justify-content-center text-center mb-5">
+                <div class="col-lg-9">
+                    <span class="badge-cyber mb-2">Tentang Kami</span>
+                    <h2 class="fw-bold display-6 mb-3 text-white">Di Balik Layar "Aktivitas Digital"</h2>
+                    <p class="text-secondary lead" style="line-height: 1.8;">
+                        Bukan sekadar aplikasi biasa, ini adalah wujud nyata dari dedikasi, eksperimen panjang, dan semangat kolaborasi lintas generasi untuk mendampingi langkah transformasi digital di Indonesia.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Cerita / Narasi Pengantar Kreatif -->
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-10">
+                    <div class="cyber-card p-4 p-md-5" style="border-left: 5px solid var(--neon-cyan);">
+                        <h3 class="h4 fw-bold text-white mb-3"><i class="fa-solid fa-quote-left text-info me-2 fs-3"></i> Berawal Dari Kebutuhan Nyata di Lapangan</h3>
+                        <p class="text-secondary mb-3" style="line-height: 1.8;">
+                            Di era digital yang bergerak super cepat ini, banyak pelaku UMKM, mahasiswa tingkat akhir, hingga kreator pemula sering kali merasa kewalahan. Tantangannya beragam: mulai dari bingung merancang konten harian, kesulitan menyusun strategi promosi, hingga keterbatasan akses terhadap perangkat penunjang yang praktis dan terjangkau.
+                        </p>
+                        <p class="text-secondary mb-0" style="line-height: 1.8;">
+                            Dari keresahan itulah <strong>Aktivitas Digital</strong> lahir. Kami merangkum riset mendalam, pengalaman pendampingan langsung di lapangan, serta integrasi teknologi AI mutakhir ke dalam sebuah ekosistem aplikasi yang dirancang khusus agar siapa saja—tanpa harus jago IT—bisa langsung mandiri dan berkembang.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Visi, Misi & Filosofi Grid -->
+            <div class="row g-4 mb-5">
+                <div class="col-md-4">
+                    <div class="cyber-card p-4 h-100 text-center">
+                        <div class="text-info fs-1 mb-3 floating-element"><i class="fa-solid fa-compass"></i></div>
+                        <h4 class="h5 fw-bold mb-3 text-white">Visi Utama Kami</h4>
+                        <p class="text-secondary small mb-0" style="line-height: 1.7;">
+                            Menjadi katalisator terdepan dalam pemerataan literasi digital dan kemandirian ekonomi kreatif bagi UMKM serta generasi muda di seluruh nusantara.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="cyber-card p-4 h-100 text-center">
+                        <div class="fs-1 mb-3 floating-element" style="color: #c084fc; animation-delay: 0.3s;"><i class="fa-solid fa-bullseye"></i></div>
+                        <h4 class="h5 fw-bold mb-3 text-white">Misi Berkelanjutan</h4>
+                        <p class="text-secondary small mb-0" style="line-height: 1.7;">
+                            Menyediakan perangkat digital yang fungsional, aman, dan mudah diakses, sekaligus memberikan pendampingan intensif dari dasar hingga mahir.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="cyber-card p-4 h-100 text-center">
+                        <div class="text-success fs-1 mb-3 floating-element" style="animation-delay: 0.6s;"><i class="fa-solid fa-seedling"></i></div>
+                        <h4 class="h5 fw-bold mb-3 text-white">Tagline (3B)</h4>
+                        <p class="text-secondary small mb-0" style="line-height: 1.7;">
+                            <strong>Berkreasi</strong> tanpa batas, <strong>Berkolaborasi</strong> tanpa henti, dan bersama-sama <strong>Berkembang</strong> menghadapi masa depan teknologi.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bagian Kenapa Harus Memilih Kami -->
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="cyber-card p-4 p-md-5 text-center">
+                        <h3 class="fw-bold h4 mb-3 text-white">Mengapa Komunitas & UMKM Memilih Kami?</h3>
+                        <p class="text-muted small mb-4 col-md-10 mx-auto">Kami tidak sekadar menjual aplikasi, melainkan membangun ekosistem pendukung yang peduli pada pertumbuhan jangka panjang Anda.</p>
+                        
+                        <div class="row g-3 text-start">
+                            <div class="col-md-6">
+                                <div class="d-flex align-items-start gap-3 p-3 bg-black bg-opacity-40 rounded-3 h-100 border border-secondary border-opacity-25">
+                                    <div class="text-info fs-4 mt-1"><i class="fa-solid fa-circle-check"></i></div>
+                                    <div>
+                                        <h5 class="h6 fw-bold mb-1 text-white">Pendekatan Ramah Pengguna</h5>
+                                        <p class="text-secondary small mb-0">Antarmuka dirancang sesederhana mungkin agar nyaman digunakan bahkan oleh pemula sekalipun.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="d-flex align-items-start gap-3 p-3 bg-black bg-opacity-40 rounded-3 h-100 border border-secondary border-opacity-25">
+                                    <div class="fs-4 mt-1" style="color: #c084fc;"><i class="fa-solid fa-headset"></i></div>
+                                    <div>
+                                        <h5 class="h6 fw-bold mb-1 text-white">Dukungan Konsultasi Privat</h5>
+                                        <p class="text-secondary small mb-0">Terhubung langsung dengan tim ahli via WhatsApp untuk solusi kendala teknis harian.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ================= PAGE 4: BLOG ================= -->
+    <div id="page-blog" class="page-content">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <span class="badge-cyber mb-2">Jurnal & Artikel</span>
+                <h2 class="fw-bold text-white">Blog & Wawasan Digital</h2>
+                <p class="text-secondary">Artikel edukatif seputar tips konten, strategi bisnis UMKM, dan produktivitas</p>
+            </div>
+
+            <div class="row g-4 mb-4">
+                <div class="col-md-4">
+                    <div class="cyber-card h-100 overflow-hidden">
+                        <div class="bg-info text-black p-3 text-center fw-bold small">Jurnal Kreator</div>
+                        <div class="p-4">
+                            <span class="text-muted small"><i class="fa-regular fa-calendar me-1"></i> 24 September 2026</span>
+                            <h4 class="h5 fw-bold mt-2 mb-3 text-white">Strategi Konten Organik untuk Meningkatkan Penjualan UMKM</h4>
+                            <p class="text-secondary small mb-0" style="line-height: 1.7;">Pelajari cara merancang konten Instagram dan TikTok yang mendatangkan pembeli secara konsisten.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="cyber-card h-100 overflow-hidden">
+                        <div class="text-white p-3 text-center fw-bold small" style="background-color: #7928ca;">Mahasiswa & Pelajar</div>
+                        <div class="p-4">
+                            <span class="text-muted small"><i class="fa-regular fa-calendar me-1"></i> 20 September 2026</span>
+                            <h4 class="h5 fw-bold mt-2 mb-3 text-white">Membangun Portofolio Kreatif Sejak Masa Kuliah</h4>
+                            <p class="text-secondary small mb-0" style="line-height: 1.7;">Tips praktis bagi mahasiswa dan pelajar dalam mengemas tugas kuliah menjadi portofolio siap kerja.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="cyber-card h-100 overflow-hidden">
+                        <div class="bg-dark text-white p-3 text-center fw-bold small border-bottom border-secondary">Teknologi & AI</div>
+                        <div class="p-4">
+                            <span class="text-muted small"><i class="fa-regular fa-calendar me-1"></i> 15 September 2026</span>
+                            <h4 class="h5 fw-bold mt-2 mb-3 text-white">Pemanfaatan AI untuk Efisiensi Waktu Kreator Konten</h4>
+                            <p class="text-secondary small mb-0" style="line-height: 1.7;">Bagaimana kecerdasan buatan membantu mempercepat proses brainstorming ide harian.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= PAGE 5: CONTACT ================= -->
+    <div id="page-contact" class="page-content">
+        <div class="container py-5 text-center">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="cyber-card p-5">
+                        <div class="floating-element d-inline-block mb-3">
+                            <i class="fa-brands fa-whatsapp text-success fa-4x"></i>
+                        </div>
+                        <h2 class="fw-bold mb-3 text-white">Dapatkan File APK "Aktivitas Digital" Sekarang</h2>
+                        <p class="text-secondary mb-4" style="line-height: 1.8;">
+                            Karena aplikasi ini didistribusikan secara personal, silakan hubungi tim kami melalui WhatsApp untuk pemesanan, konsultasi, dan pengiriman file APK langsung ke perangkat Anda.
+                        </p>
+                        <a href="https://wa.me/6285732783289?text=Halo%2C%20saya%20ingin%20membeli%20dan%20mendapatkan%20file%20APK%20Aktivitas%20Digital." target="_blank" class="btn btn-neon btn-lg rounded-pill px-5 py-3 shadow">
+                            <i class="fa-brands fa-whatsapp me-2"></i> Hubungi WhatsApp untuk Pembelian APK
+                        </a>
+                        <p class="text-muted small mt-3">Respon cepat setiap hari pukul 08.00 - 20.00 WIB</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 mt-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h5 class="fw-bold mb-3">Aktivitas Digital</h5>
+                    <p class="small text-muted" style="line-height: 1.7;">Ekosistem digital terpadu untuk UMKM, mahasiswa, pelajar, dan kreator dalam berkreasi, berkolaborasi, dan berkembang.</p>
+                </div>
+                <div class="col-lg-2 col-6">
+                    <h5 class="fw-bold mb-3">Navigasi</h5>
+                    <ul class="list-unstyled vstack gap-2 small">
+                        <li><a onclick="switchPage('home')">Home</a></li>
+                        <li><a onclick="switchPage('services')">Services</a></li>
+                        <li><a onclick="switchPage('about')">About Us</a></li>
+                        <li><a onclick="switchPage('blog')">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <h5 class="fw-bold mb-3">Kontak & Layanan</h5>
+                    <ul class="list-unstyled vstack gap-2 small">
+                        <li><a href="https://wa.me/6285732783289" target="_blank">Pemesanan APK via WhatsApp</a></li>
+                        <li><a onclick="switchPage('contact')">Hubungi Kami</a></li>
+                        <li><span class="text-muted">Email: support@aktivitasdigital.id</span></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h5 class="fw-bold mb-3">Media Sosial</h5>
+                    <div class="d-flex gap-3 fs-5">
+                        <a href="#" class="text-muted"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="text-muted"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="#" class="text-muted"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#" class="text-muted"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="border-secondary my-4 opacity-25">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start small text-muted">
+                    &copy; 2026 Aktivitas Digital. Hak Cipta Dilindungi.
+                </div>
+                <div class="col-md-6 text-center text-md-end small text-muted">
+                    <span>Berkreasi &bull; Berkolaborasi &bull; Berkembang</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Script SPA Tab Switcher & Interactive Particle Canvas -->
+    <script>
+        function switchPage(pageId) {
+            const pages = document.querySelectorAll('.page-content');
+            pages.forEach(page => {
+                page.classList.remove('active-page');
+            });
+
+            const targetPage = document.getElementById('page-' + pageId);
+            if (targetPage) {
+                targetPage.classList.add('active-page');
+            }
+
+            const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+            });
+
+            const activeNav = document.getElementById('nav-' + pageId);
+            if (activeNav) {
+                activeNav.classList.add('active');
+            }
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        /* Interactive Particle Network Canvas Script */
+        const canvas = document.getElementById('particle-canvas');
+        const ctx = canvas.getContext('2d');
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        let particlesArray = [];
+        const numberOfParticles = Math.floor(window.innerWidth / 35);
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2 + 0.5;
+                this.speedX = (Math.random() - 0.5) * 0.8;
+                this.speedY = (Math.random() - 0.5) * 0.8;
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                if (this.x > canvas.width) this.x = 0;
+                else if (this.x < 0) this.x = canvas.width;
+                if (this.y > canvas.height) this.y = 0;
+                else if (this.y < 0) this.y = canvas.height;
+            }
+            draw() {
+                ctx.fillStyle = 'rgba(0, 242, 254, 0.4)';
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        function initParticles() {
+            particlesArray = [];
+            for (let i = 0; i < numberOfParticles; i++) {
+                particlesArray.push(new Particle());
+            }
+        }
+        initParticles();
+
+        function connectParticles() {
+            let maxDistance = 110;
+            for (let a = 0; a < particlesArray.length; a++) {
+                for (let b = a + 1; b < particlesArray.length; b++) {
+                    let dx = particlesArray[a].x - particlesArray[b].x;
+                    let dy = particlesArray[a].y - particlesArray[b].y;
+                    let distance = Math.sqrt(dx * dx + dy * dy);
+                    if (distance < maxDistance) {
+                        let opacityValue = 1 - (distance / maxDistance);
+                        ctx.strokeStyle = `rgba(121, 40, 202, ${opacityValue * 0.25})`;
+                        ctx.lineWidth = 0.8;
+                        ctx.beginPath();
+                        ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+                        ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let i = 0; i < particlesArray.length; i++) {
+                particlesArray[i].update();
+                particlesArray[i].draw();
+            }
+            connectParticles();
+            requestAnimationFrame(animateParticles);
+        }
+        animateParticles();
+    </script>
+</body>
+</html>
