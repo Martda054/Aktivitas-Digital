@@ -267,14 +267,6 @@
         footer a:hover {
             color: var(--neon-cyan);
         }
-
-        /* Pengaturan Tampilan Halaman Single-Page */
-.page-content {
-    display: none;
-}
-.page-content.active-page {
-    display: block;
-}
     </style>
 </head>
 <body>
@@ -295,25 +287,25 @@
             <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center gap-3">
-                <li class="nav-item">
-                    <a class="nav-link active" id="nav-home" href="#" onclick="switchPage('home')">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="nav-services" href="#" onclick="switchPage('services')">Services</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="nav-about" href="#" onclick="switchPage('about')">About Us</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="nav-blog" href="#" onclick="switchPage('blog')">Blog</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="nav-contact" href="#" onclick="switchPage('contact')">Contact</a>
-                </li>
-            </ul>
-        </div>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-lg-center gap-lg-2 my-2 my-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" onclick="switchPage('home')" id="nav-home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" onclick="switchPage('services')" id="nav-services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" onclick="switchPage('about')" id="nav-about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" onclick="switchPage('blog')" id="nav-blog">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" onclick="switchPage('contact')" id="nav-contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
 
@@ -340,7 +332,7 @@
 
         <!-- Services Summary -->
         <section class="py-5 position-relative">
-        <style>
+             <style>
             /* Mengunci card agar tidak ada animasi, efek hover, atau perubahan border */
             .cyber-card.no-glow,
             .cyber-card.no-glow:hover,
@@ -359,14 +351,14 @@
                 visibility: visible !important;
                 transition: none !important;
             }
-        </style>
-        <div class="container py-4">
-            <div class="text-center mb-5">
-                <span class="text-uppercase fw-bold text-info tracking-wider small">Kunci Sukses Bisnis Digital Anda</span>
-                <h2 class="fw-bold display-6 mt-1 text-white">Platform Terpadu Untuk Kebutuhan Bisnis Anda</h2>
-            </div>
-            <div class="row g-4">
-                <!-- Card Berkreasi -->
+             </style>
+            <div class="container py-4">
+                <div class="text-center mb-5">
+                    <span class="text-uppercase fw-bold text-info tracking-wider small">Kunci Sukses Bisnis Digital Anda</span>
+                    <h2 class="fw-bold display-6 mt-1 text-white">Platforn Terpadu Untuk Kebutuhan Bisnis Anda</h2>
+                </div>
+                <div class="row g-4">
+                     <!-- Card Berkreasi -->
                 <div class="col-md-4">
                     <div class="cyber-card no-glow p-4 h-100 text-center" style="transform: none !important; transition: none !important; box-shadow: none !important;">
                         <div class="text-info fs-1 mb-3"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
@@ -443,120 +435,119 @@
         </style>
 
         <div class="container py-4">
-            <div class="text-center mb-5">
-                <span class="text-uppercase fw-bold tracking-wider small" style="color: #f472b6;">Portofolio Lapangan</span>
-                <h2 class="fw-bold display-6 mt-1 text-white">Project & Dokumentasi Lapangan</h2>
-                <p class="text-secondary">Galeri foto dan video aktivitas pendampingan digital yang telah kami laksanakan</p>
-            </div>
+                <div class="text-center mb-5">
+                    <span class="text-uppercase fw-bold tracking-wider small" style="color: #f472b6;">Portofolio Lapangan</span>
+                    <h2 class="fw-bold display-6 mt-1 text-white">Project & Dokumentasi Lapangan</h2>
+                    <p class="text-secondary">Galeri foto dan video aktivitas pendampingan digital yang telah kami laksanakan</p>
+                </div>
+                
+                <!-- BARIS ATAS: 5 Card Gambar (Portrait & Bisa di-Slide Kanan-Kiri) -->
+                <div class="mb-5">
+                    <h3 class="h5 fw-bold text-white mb-3"><i class="fa-solid fa-images me-2 text-info"></i> Dokumentasi Foto (Geser untuk melihat lainnya)</h3>
+                    <div class="portfolio-slider-container">
+                        <!-- Card 1 -->
+                        <div class="portfolio-slide-item">
+                            <div class="cyber-card no-glow h-100">
+                                <div class="ratio ratio-portrait bg-dark overflow-hidden">
+                                    <img src="assetsfoto/porto1.jpg" class="w-100 h-100 object-fit-cover" alt="Digitalisasi UMKM">
+                                </div>
+                                <div class="p-3">
+                                    <span class="badge mb-2 px-3 py-1 rounded-pill fw-semibold" style="background-color: rgba(0, 180, 180, 0.726); color: #ffffff;">UMKM Lokal</span>
+                                    <h4 class="h6 fw-bold mt-1 text-white">Pendampingan Digitalisasi UMKM</h4>
+                                    <p class="text-secondary small mb-0">Pelatihan implementasi promosi digital toko online.</p>
+                                </div>
+                            </div>
+                        </div> 
+                        <!-- Card 2 -->
+                        <div class="portfolio-slide-item">
+                            <div class="cyber-card no-glow h-100">
+                                <div class="ratio ratio-portrait bg-dark overflow-hidden">
+                                    <img src="assetsfoto/porto2.jpg" class="w-100 h-100 object-fit-cover" alt="Workshop SMK">
+                                </div>
+                                <div class="p-3">
+                                    <span class="badge mb-2 px-3 py-1 rounded-pill fw-semibold" style="background-color: rgba(0, 180, 180, 0.726); color: #ffffff;">SMK Multimedia</span>
+                                    <h4 class="h6 fw-bold mt-1 text-white">Kurasi Toolkit Kreatif Pelajar</h4>
+                                    <p class="text-secondary small mb-0">Pengenalan aplikasi produktivitas sekolah.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 3 -->
+                        <div class="portfolio-slide-item">
+                            <div class="cyber-card no-glow h-100">
+                                <div class="ratio ratio-portrait bg-dark overflow-hidden">
+                                    <img src="assetsfoto/porto1.jpg" class="w-100 h-100 object-fit-cover" alt="Kunjungan Industri">
+                                </div>
+                                <div class="p-3">
+                                    <span class="badge mb-2 px-3 py-1 rounded-pill fw-semibold" style="background-color: rgba(0, 180, 180, 0.726); color: #ffffff;">Komunitas</span>
+                                    <h4 class="h6 fw-bold mt-1 text-white">Edukasi Literasi Digital</h4>
+                                    <p class="text-secondary small mb-0">Sesi berbagi strategi pemasaran media sosial.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 4 -->
+                        <div class="portfolio-slide-item">
+                            <div class="cyber-card no-glow h-100">
+                                <div class="ratio ratio-portrait bg-dark overflow-hidden">
+                                    <img src="assetsfoto/porto2.jpg" class="w-100 h-100 object-fit-cover" alt="Inkubasi Bisnis">
+                                </div>
+                                <div class="p-3">
+                                    <span class="badge mb-2 px-3 py-1 rounded-pill fw-semibold" style="background-color: rgba(0, 180, 180, 0.726); color: #ffffff;">Startup</span>
+                                    <h4 class="h6 fw-bold mt-1 text-white">Inkubasi Bisnis Digital</h4>
+                                    <p class="text-secondary small mb-0">Pengembangan model bisnis dan riset pasar.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 5 -->
+                        <div class="portfolio-slide-item">
+                            <div class="cyber-card no-glow h-100">
+                                <div class="ratio ratio-portrait bg-dark overflow-hidden">
+                                    <img src="assetsfoto/porto1.jpg" class="w-100 h-100 object-fit-cover" alt="Expo Kreatif">
+                                </div>
+                                <div class="p-3">
+                                    <span class="badge mb-2 px-3 py-1 rounded-pill fw-semibold" style="background-color: rgba(0, 180, 180, 0.726); color: #ffffff;">Pameran</span>
+                                    <h4 class="h6 fw-bold mt-1 text-white">Expo Produk Kreatif</h4>
+                                    <p class="text-secondary small mb-0">Pameran hasil karya dan inovasi digital.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-            <!-- BARIS ATAS: 5 Card Gambar (Portrait & Bisa di-Slide Kanan-Kiri) -->
-            <div class="mb-5">
-                <h3 class="h5 fw-bold text-white mb-3"><i class="fa-solid fa-images me-2 text-info"></i> Dokumentasi Foto (Geser untuk melihat lainnya)</h3>
-                <div class="portfolio-slider-container">
-                    <!-- Card 1 -->
-                    <div class="portfolio-slide-item">
-                        <div class="cyber-card no-glow h-100">
-                            <div class="ratio ratio-portrait bg-dark overflow-hidden">
-                                <img src="assetsfoto/porto1.jpg" class="w-100 h-100 object-fit-cover" alt="Digitalisasi UMKM">
-                            </div>
-                            <div class="p-3">
-                                <span class="badge mb-2 px-3 py-1 rounded-pill fw-semibold" style="background-color: rgba(0, 180, 180, 0.726); color: #ffffff;">UMKM Lokal</span>
-                                <h4 class="h6 fw-bold mt-1 text-white">Pendampingan Digitalisasi UMKM</h4>
-                                <p class="text-secondary small mb-0">Pelatihan implementasi promosi digital toko online.</p>
-                            </div>
-                        </div>
-                    </div> 
-                    <!-- Card 2 -->
-                    <div class="portfolio-slide-item">
-                        <div class="cyber-card no-glow h-100">
-                            <div class="ratio ratio-portrait bg-dark overflow-hidden">
-                                <img src="assetsfoto/porto2.jpg" class="w-100 h-100 object-fit-cover" alt="Workshop SMK">
-                            </div>
-                            <div class="p-3">
-                                <span class="badge mb-2 px-3 py-1 rounded-pill fw-semibold" style="background-color: rgba(0, 180, 180, 0.726); color: #ffffff;">SMK Multimedia</span>
-                                <h4 class="h6 fw-bold mt-1 text-white">Kurasi Toolkit Kreatif Pelajar</h4>
-                                <p class="text-secondary small mb-0">Pengenalan aplikasi produktivitas sekolah.</p>
+                <!-- BARIS BAWAH: 2 Card Video -->
+                <div>
+                    <h3 class="h5 fw-bold text-white mb-3"><i class="fa-solid fa-video me-2" style="color: #c084fc;"></i> Dokumentasi Video</h3>
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="cyber-card no-glow h-100">
+                                <div class="ratio ratio-16x9 bg-dark">
+                                    <iframe src="assestsvideo/portoV1.mp4" title="Pelatihan Kampus" allowfullscreen class="border-0"></iframe>
+                                </div>
+                                <div class="p-4">
+                                    <span class="badge mb-2 px-3 py-1 rounded-pill fw-semibold" style="background-color: rgba(0, 180, 180, 0.726); color: #ffffff;">Vokasi & Kampus</span>
+                                    <h4 class="h6 fw-bold mt-1 text-white">Pelatihan Content Planner Mahasiswa</h4>
+                                    <p class="text-secondary small mb-0">Workshop pembuatan strategi konten media sosial bersama mahasiswa vokasi.</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- Card 3 -->
-                    <div class="portfolio-slide-item">
-                        <div class="cyber-card no-glow h-100">
-                            <div class="ratio ratio-portrait bg-dark overflow-hidden">
-                                <img src="assetsfoto/porto1.jpg" class="w-100 h-100 object-fit-cover" alt="Kunjungan Industri">
-                            </div>
-                            <div class="p-3">
-                                <span class="badge mb-2 px-3 py-1 rounded-pill fw-semibold" style="background-color: rgba(0, 180, 180, 0.726); color: #ffffff;">Komunitas</span>
-                                <h4 class="h6 fw-bold mt-1 text-white">Edukasi Literasi Digital</h4>
-                                <p class="text-secondary small mb-0">Sesi berbagi strategi pemasaran media sosial.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Card 4 -->
-                    <div class="portfolio-slide-item">
-                        <div class="cyber-card no-glow h-100">
-                            <div class="ratio ratio-portrait bg-dark overflow-hidden">
-                                <img src="assetsfoto/porto2.jpg" class="w-100 h-100 object-fit-cover" alt="Inkubasi Bisnis">
-                            </div>
-                            <div class="p-3">
-                                <span class="badge mb-2 px-3 py-1 rounded-pill fw-semibold" style="background-color: rgba(0, 180, 180, 0.726); color: #ffffff;">Startup</span>
-                                <h4 class="h6 fw-bold mt-1 text-white">Inkubasi Bisnis Digital</h4>
-                                <p class="text-secondary small mb-0">Pengembangan model bisnis dan riset pasar.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Card 5 -->
-                    <div class="portfolio-slide-item">
-                        <div class="cyber-card no-glow h-100">
-                            <div class="ratio ratio-portrait bg-dark overflow-hidden">
-                                <img src="assetsfoto/porto1.jpg" class="w-100 h-100 object-fit-cover" alt="Expo Kreatif">
-                            </div>
-                            <div class="p-3">
-                                <span class="badge mb-2 px-3 py-1 rounded-pill fw-semibold" style="background-color: rgba(0, 180, 180, 0.726); color: #ffffff;">Pameran</span>
-                                <h4 class="h6 fw-bold mt-1 text-white">Expo Produk Kreatif</h4>
-                                <p class="text-secondary small mb-0">Pameran hasil karya dan inovasi digital.</p>
+                        <div class="col-md-6">
+                            <div class="cyber-card no-glow h-100">
+                                <div class="ratio ratio-16x9 bg-dark">
+                                    <iframe src="assestsvideo/portoV1.mp4" title="Workshop Lanjutan" allowfullscreen class="border-0"></iframe>
+                                </div>
+                                <div class="p-4">
+                                    <span class="badge mb-2 px-3 py-1 rounded-pill fw-semibold" style="background-color: rgba(0, 180, 180, 0.726); color: #ffffff;">Seminar Umum</span>
+                                    <h4 class="h6 fw-bold mt-1 text-white">Masterclass Bisnis Digital Era AI</h4>
+                                    <p class="text-secondary small mb-0">Bedah tuntas pemanfaatan teknologi kecerdasan buatan untuk efisiensi bisnis.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <!-- BARIS BAWAH: 2 Card Video -->
-            <div>
-                <h3 class="h5 fw-bold text-white mb-3"><i class="fa-solid fa-video me-2" style="color: #c084fc;"></i> Dokumentasi Video</h3>
-                <div class="row g-4">
-                    <div class="col-md-6">
-                        <div class="cyber-card no-glow h-100">
-                            <div class="ratio ratio-16x9 bg-dark">
-                                <iframe src="assestsvideo/portoV1.mp4" title="Pelatihan Kampus" allowfullscreen class="border-0"></iframe>
-                            </div>
-                            <div class="p-4">
-                                <span class="badge mb-2 px-3 py-1 rounded-pill fw-semibold" style="background-color: rgba(0, 180, 180, 0.726); color: #ffffff;">Vokasi & Kampus</span>
-                                <h4 class="h6 fw-bold mt-1 text-white">Pelatihan Content Planner Mahasiswa</h4>
-                                <p class="text-secondary small mb-0">Workshop pembuatan strategi konten media sosial bersama mahasiswa vokasi.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="cyber-card no-glow h-100">
-                            <div class="ratio ratio-16x9 bg-dark">
-                                <iframe src="assestsvideo/portoV1.mp4" title="Workshop Lanjutan" allowfullscreen class="border-0"></iframe>
-                            </div>
-                            <div class="p-4">
-                                <span class="badge mb-2 px-3 py-1 rounded-pill fw-semibold" style="background-color: rgba(0, 180, 180, 0.726); color: #ffffff;">Seminar Umum</span>
-                                <h4 class="h6 fw-bold mt-1 text-white">Masterclass Bisnis Digital Era AI</h4>
-                                <p class="text-secondary small mb-0">Bedah tuntas pemanfaatan teknologi kecerdasan buatan untuk efisiensi bisnis.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
         </section>
 
-               <!-- Bagian Klien & Partner -->
-        <section class="py-5">
+                <!-- Bagian Klien & Partner -->
+                <section class="py-5">
         <style>
             /* Mengunci card utama agar statis dan tanpa animasi/cahaya hover */
             .cyber-card.no-glow,
@@ -831,6 +822,9 @@
                 </div>
             </div>
 
+        </div>
+    </div>
+
     <!-- ================= PAGE 3: ABOUT US ================= -->
     <div id="page-about" class="page-content">
         <div class="container py-5">
@@ -1039,36 +1033,6 @@
     </footer>
 
     <!-- Bootstrap 5 JS Bundle -->
-    <script>
-    function switchPage(pageId) {
-        // Sembunyikan semua halaman
-        const pages = document.querySelectorAll('.page-content');
-        pages.forEach(page => {
-            page.classList.remove('active-page');
-        });
-
-        // Hapus status aktif dari semua menu navbar
-        const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-        });
-
-        // Tampilkan halaman yang dituju
-        const targetPage = document.getElementById('page-' + pageId);
-        if (targetPage) {
-            targetPage.classList.add('active-page');
-        }
-
-        // Tandai menu navbar yang aktif
-        const targetNav = document.getElementById('nav-' + pageId);
-        if (targetNav) {
-            targetNav.classList.add('active');
-        }
-
-        // Gulir otomatis ke atas
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-</script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Script SPA Tab Switcher & Interactive Particle Canvas -->
