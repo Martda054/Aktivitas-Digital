@@ -337,12 +337,17 @@
             .cyber-card.no-glow:focus {
                 transform: none !important;
                 box-shadow: none !important;
-                border-color: rgba(255, 255, 255, 0.12) !important; /* Sesuaikan dengan warna border asli card Anda */
+                border-color: inherit !important;
             }
+            /* Mengunci efek/warna garis di bagian atas card agar tetap stay */
+            .cyber-card.no-glow::before,
+            .cyber-card.no-glow::after,
             .cyber-card.no-glow:hover::before,
             .cyber-card.no-glow:hover::after {
-                opacity: 0 !important;
-                display: none !important;
+                /* Sesuaikan opacity atau warna jika diperlukan agar tetap stabil */
+                opacity: 0.7 !important; 
+                filter: none !important;
+                transition: none !important;
             }
         </style>
         <div class="container py-4">
