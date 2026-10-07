@@ -723,6 +723,27 @@
 
     <!-- ================= PAGE 2: SERVICES ================= -->
     <div id="page-services" class="page-content">
+        <style>
+        /* 1. Tampilkan dan kunci garis atas agar selalu menyala pada semua cyber-card */
+.cyber-card::before,
+.cyber-card::after {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* 2. Pastikan saat di-hover warnanya tidak berubah atau hilang (tetap stay seperti kondisi awalnya) */
+.cyber-card:hover::before,
+.cyber-card:hover::after {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+ /* Menghilangkan semua efek cahaya / glow / shadow saat card terkena kursor */
+.cyber-card:hover {
+    box-shadow: none !important;
+    filter: none !important;
+}
+        </style>
+
         <div class="container py-5">
             <div class="text-center mb-5">
                 <span class="badge-cyber mb-2">Layanan Pilihan Anda</span>
@@ -738,7 +759,7 @@
                             <div class="col-md-8 mb-3 mb-md-0">
                                 <div class="d-flex align-items-center gap-2 mb-2">
                                     <span class="badge bg-danger px-2.5 py-1 small fw-bold rounded-pill"><i class="fa-solid fa-bolt me-1"></i> Penawaran Terbatas</span>
-                                    <span class="text-muted small">Eksklusif Hari Ini</span>
+                                    <span class="text-secondary small mb-0">Eksklusif Hari Ini</span>
                                 </div>
                                 <h3 class="fw-bold text-white h4 mb-2">Diskon Spesial 50% untuk Pengguna Baru APK</h3>
                                 <p class="text-secondary small mb-0" style="line-height: 1.6;">Dapatkan akses modul pilihan Anda, pembaruan otomatis seumur hidup, dan panduan privat langsung via WhatsApp.</p>
@@ -792,7 +813,7 @@
                         <div class="text-center mb-4">
                             <span class="badge mb-2 px-3 py-1 rounded-pill fw-semibold" style="background-color: rgba(192, 132, 252, 0.15); color: #c084fc;">Standar Teknis</span>
                             <h3 class="fw-bold h4 text-white">Spesifikasi Editor & Perangkat Kerja</h3>
-                            <p class="text-muted small">Standar arsitektur teknis dan editor yang digunakan dalam pengembangan modul layanan</p>
+                            <p class="text-secondary small">Standar arsitektur teknis dan editor yang digunakan dalam pengembangan modul layanan</p>
                         </div>
 
                         <div class="row g-4">
@@ -827,6 +848,17 @@
 
     <!-- ================= PAGE 3: ABOUT US ================= -->
     <div id="page-about" class="page-content">
+        <style>/* Menghilangkan efek animasi/pergerakan saat kursor menyentuh cyber-card */
+.cyber-card {
+    transition: none !important; /* Hentikan semua transisi halus */
+    transform: none !important;  /* Pastikan posisi tetap normal */
+}
+
+.cyber-card:hover {
+    transform: none !important;  /* Cegah elemen bergeser atau naik saat di-hover */
+    box-shadow: none !important; /* (Opsional) Jika ada perubahan bayangan yang ingin dihilangkan juga */
+    border-color: rgba(255, 255, 255, 0.08) !important;
+}</style>
         <div class="container py-5">
             <div class="row justify-content-center text-center mb-5">
                 <div class="col-lg-9">
@@ -889,7 +921,7 @@
                 <div class="col-lg-10">
                     <div class="cyber-card p-4 p-md-5 text-center">
                         <h3 class="fw-bold h4 mb-3 text-white">Mengapa Komunitas & UMKM Memilih Kami?</h3>
-                        <p class="text-muted small mb-4 col-md-10 mx-auto">Kami tidak sekadar menjual aplikasi, melainkan membangun ekosistem pendukung yang peduli pada pertumbuhan jangka panjang Anda.</p>
+                        <p class="text-secondary small mb-4 col-md-10 mx-auto">Kami tidak sekadar menjual aplikasi, melainkan membangun ekosistem pendukung yang peduli pada pertumbuhan jangka panjang Anda.</p>
                         
                         <div class="row g-3 text-start">
                             <div class="col-md-6">
