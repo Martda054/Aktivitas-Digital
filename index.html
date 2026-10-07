@@ -331,7 +331,7 @@
         </header>
 
         <!-- Services Summary -->
-    <section class="py-5 position-relative">
+        <section class="py-5 position-relative">
         <style>
             /* Mengunci card agar tidak ada animasi, efek hover, atau perubahan border */
             .cyber-card.no-glow,
@@ -384,179 +384,343 @@
                 </div>
             </div>
         </div>
-    </section>
+        </section>
 
         <!-- Projects & Clients -->
         <section class="py-5">
-            <div class="container py-4">
-                <div class="text-center mb-5">
-                    <span class="text-uppercase fw-bold tracking-wider small" style="color: #f472b6;">Portofolio Lapangan</span>
-                    <h2 class="fw-bold display-6 mt-1 text-white">Project & Dokumentasi Lapangan</h2>
-                    <p class="text-secondary">Galeri foto dan video aktivitas pendampingan digital yang telah kami laksanakan</p>
-                </div>
+        <style>
+            /* Mengunci card agar statis dan tanpa animasi/cahaya hover */
+            .cyber-card.no-glow,
+            .cyber-card.no-glow:hover,
+            .cyber-card.no-glow:focus {
+                transform: none !important;
+                box-shadow: none !important;
+                border-color: rgba(255, 255, 255, 0.08) !important;
+            }
+            .cyber-card.no-glow::before,
+            .cyber-card.no-glow::after,
+            .cyber-card.no-glow:hover::before,
+            .cyber-card.no-glow:hover::after {
+                opacity: 1 !important;
+                visibility: visible !important;
+                transition: none !important;
+            }
 
-                <div class="row g-4 mb-5">
-                    <div class="col-md-4">
-                        <div class="cyber-card h-100">
-                            <div class="ratio ratio-16x9 bg-dark overflow-hidden">
+            /* Styling untuk baris slider horizontal di atas */
+            .portfolio-slider-container {
+                display: flex;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                gap: 1.5rem;
+                padding-bottom: 1rem;
+                scrollbar-width: thin;
+                scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+            }
+            .portfolio-slider-container::-webkit-scrollbar {
+                height: 6px;
+            }
+            .portfolio-slider-container::-webkit-scrollbar-thumb {
+                background-color: rgba(255, 255, 255, 0.2);
+                border-radius: 10px;
+            }
+            .portfolio-slide-item {
+                flex: 0 0 280px;
+                scroll-snap-align: start;
+            }
+
+            /* Mengatur rasio gambar agar memanjang ke bawah (vertikal/portrait) */
+            .ratio-portrait {
+                aspect-ratio: 3 / 4;
+            }
+        </style>
+
+        <div class="container py-4">
+            <div class="text-center mb-5">
+                <span class="text-uppercase fw-bold tracking-wider small" style="color: #f472b6;">Portofolio Lapangan</span>
+                <h2 class="fw-bold display-6 mt-1 text-white">Project & Dokumentasi Lapangan</h2>
+                <p class="text-secondary">Galeri foto dan video aktivitas pendampingan digital yang telah kami laksanakan</p>
+            </div>
+
+            <!-- BARIS ATAS: 5 Card Gambar (Portrait & Bisa di-Slide Kanan-Kiri) -->
+            <div class="mb-5">
+                <h3 class="h5 fw-bold text-white mb-3"><i class="fa-solid fa-images me-2 text-info"></i> Dokumentasi Foto (Geser untuk melihat lainnya)</h3>
+                <div class="portfolio-slider-container">
+                    <!-- Card 1 -->
+                    <div class="portfolio-slide-item">
+                        <div class="cyber-card no-glow h-100">
+                            <div class="ratio ratio-portrait bg-dark overflow-hidden">
                                 <img src="assetsfoto/porto1.jpg" class="w-100 h-100 object-fit-cover" alt="Digitalisasi UMKM">
                             </div>
-                            <div class="p-4">
-                                <span class="badge bg-info bg-opacity-15 text-info mb-2 px-3 py-1 rounded-pill fw-semibold">UMKM Lokal</span>
-                                <h4 class="h6 fw-bold mt-1 text-white">Pendampingan Digitalisasi 100+ UMKM</h4>
-                                <p class="text-secondary small mb-0">Pelatihan langsung implementasi promosi digital dan manajemen toko online.</p>
+                            <div class="p-3">
+                                <span class="badge mb-2 px-3 py-1 rounded-pill fw-semibold" style="background-color: rgba(0, 180, 180, 0.726); color: #ffffff;">UMKM Lokal</span>
+                                <h4 class="h6 fw-bold mt-1 text-white">Pendampingan Digitalisasi UMKM</h4>
+                                <p class="text-secondary small mb-0">Pelatihan implementasi promosi digital toko online.</p>
+                            </div>
+                        </div>
+                    </div> 
+                    <!-- Card 2 -->
+                    <div class="portfolio-slide-item">
+                        <div class="cyber-card no-glow h-100">
+                            <div class="ratio ratio-portrait bg-dark overflow-hidden">
+                                <img src="assetsfoto/porto2.jpg" class="w-100 h-100 object-fit-cover" alt="Workshop SMK">
+                            </div>
+                            <div class="p-3">
+                                <span class="badge mb-2 px-3 py-1 rounded-pill fw-semibold" style="background-color: rgba(0, 180, 180, 0.726); color: #ffffff;">SMK Multimedia</span>
+                                <h4 class="h6 fw-bold mt-1 text-white">Kurasi Toolkit Kreatif Pelajar</h4>
+                                <p class="text-secondary small mb-0">Pengenalan aplikasi produktivitas sekolah.</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="cyber-card h-100">
+                    <!-- Card 3 -->
+                    <div class="portfolio-slide-item">
+                        <div class="cyber-card no-glow h-100">
+                            <div class="ratio ratio-portrait bg-dark overflow-hidden">
+                                <img src="assetsfoto/porto1.jpg" class="w-100 h-100 object-fit-cover" alt="Kunjungan Industri">
+                            </div>
+                            <div class="p-3">
+                                <span class="badge mb-2 px-3 py-1 rounded-pill fw-semibold" style="background-color: rgba(0, 180, 180, 0.726); color: #ffffff;">Komunitas</span>
+                                <h4 class="h6 fw-bold mt-1 text-white">Edukasi Literasi Digital</h4>
+                                <p class="text-secondary small mb-0">Sesi berbagi strategi pemasaran media sosial.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="portfolio-slide-item">
+                        <div class="cyber-card no-glow h-100">
+                            <div class="ratio ratio-portrait bg-dark overflow-hidden">
+                                <img src="assetsfoto/porto2.jpg" class="w-100 h-100 object-fit-cover" alt="Inkubasi Bisnis">
+                            </div>
+                            <div class="p-3">
+                                <span class="badge mb-2 px-3 py-1 rounded-pill fw-semibold" style="background-color: rgba(0, 180, 180, 0.726); color: #ffffff;">Startup</span>
+                                <h4 class="h6 fw-bold mt-1 text-white">Inkubasi Bisnis Digital</h4>
+                                <p class="text-secondary small mb-0">Pengembangan model bisnis dan riset pasar.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 5 -->
+                    <div class="portfolio-slide-item">
+                        <div class="cyber-card no-glow h-100">
+                            <div class="ratio ratio-portrait bg-dark overflow-hidden">
+                                <img src="assetsfoto/porto1.jpg" class="w-100 h-100 object-fit-cover" alt="Expo Kreatif">
+                            </div>
+                            <div class="p-3">
+                                <span class="badge mb-2 px-3 py-1 rounded-pill fw-semibold" style="background-color: rgba(0, 180, 180, 0.726); color: #ffffff;">Pameran</span>
+                                <h4 class="h6 fw-bold mt-1 text-white">Expo Produk Kreatif</h4>
+                                <p class="text-secondary small mb-0">Pameran hasil karya dan inovasi digital.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BARIS BAWAH: 2 Card Video -->
+            <div>
+                <h3 class="h5 fw-bold text-white mb-3"><i class="fa-solid fa-video me-2" style="color: #c084fc;"></i> Dokumentasi Video</h3>
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="cyber-card no-glow h-100">
                             <div class="ratio ratio-16x9 bg-dark">
                                 <iframe src="assestsvideo/portoV1.mp4" title="Pelatihan Kampus" allowfullscreen class="border-0"></iframe>
                             </div>
                             <div class="p-4">
-                                <span class="badge mb-2 px-3 py-1 rounded-pill fw-semibold" style="background-color: rgba(192, 132, 252, 0.15); color: #c084fc;">Vokasi & Kampus</span>
+                                <span class="badge mb-2 px-3 py-1 rounded-pill fw-semibold" style="background-color: rgba(0, 180, 180, 0.726); color: #ffffff;">Vokasi & Kampus</span>
                                 <h4 class="h6 fw-bold mt-1 text-white">Pelatihan Content Planner Mahasiswa</h4>
                                 <p class="text-secondary small mb-0">Workshop pembuatan strategi konten media sosial bersama mahasiswa vokasi.</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="cyber-card h-100">
-                            <div class="ratio ratio-16x9 bg-dark overflow-hidden">
-                                <img src="assetsfoto/porto2.jpg" class="w-100 h-100 object-fit-cover" alt="Workshop SMK">
+                    <div class="col-md-6">
+                        <div class="cyber-card no-glow h-100">
+                            <div class="ratio ratio-16x9 bg-dark">
+                                <iframe src="assestsvideo/portoV1.mp4" title="Workshop Lanjutan" allowfullscreen class="border-0"></iframe>
                             </div>
                             <div class="p-4">
-                                <span class="badge bg-success bg-opacity-15 text-success mb-2 px-3 py-1 rounded-pill fw-semibold">SMK Multimedia</span>
-                                <h4 class="h6 fw-bold mt-1 text-white">Kurasi Toolkit Kreatif Pelajar</h4>
-                                <p class="text-secondary small mb-0">Pengenalan perangkat dan aplikasi pendukung produktivitas sejak bangku sekolah.</p>
+                                <span class="badge mb-2 px-3 py-1 rounded-pill fw-semibold" style="background-color: rgba(0, 180, 180, 0.726); color: #ffffff;">Seminar Umum</span>
+                                <h4 class="h6 fw-bold mt-1 text-white">Masterclass Bisnis Digital Era AI</h4>
+                                <p class="text-secondary small mb-0">Bedah tuntas pemanfaatan teknologi kecerdasan buatan untuk efisiensi bisnis.</p>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Bagian Klien & Partner -->
-                <div class="row align-items-center mb-5">
-                    <div class="col-12">
-                        <div class="cyber-card p-4 p-md-5">
-                            <h5 class="fw-bold mb-2 text-center text-white">Klien & Partner Kerja Sama</h5>
-                            <p class="text-muted small text-center mb-4">Didukung oleh berbagai instansi, UMKM, dan komunitas terpercaya</p>
-                            
-                            <div class="row g-3 justify-content-center">
-                                <div class="col-6 col-md-3">
-                                    <div class="p-3 border border-secondary border-opacity-25 rounded-3 text-center bg-black bg-opacity-40 h-100 d-flex flex-column align-items-center justify-content-center">
-                                        <div class="text-info fs-3 mb-2"><i class="fa-solid fa-store"></i></div>
-                                        <span class="fw-semibold small text-white">UMKM Mandiri Solo</span>
-                                    </div>
+        </div>
+        </section>
+
+               <!-- Bagian Klien & Partner -->
+        <section class="py-5">
+        <style>
+            /* Mengunci card utama agar statis dan tanpa animasi/cahaya hover */
+            .cyber-card.no-glow,
+            .cyber-card.no-glow:hover,
+            .cyber-card.no-glow:focus {
+                transform: none !important;
+                box-shadow: none !important;
+                border-color: rgba(255, 255, 255, 0.08) !important;
+            }
+            .cyber-card.no-glow::before,
+            .cyber-card.no-glow::after,
+            .cyber-card.no-glow:hover::before,
+            .cyber-card.no-glow:hover::after {
+                opacity: 1 !important;
+                visibility: visible !important;
+                transition: none !important;
+            }
+
+            /* Styling opsional untuk menyesuaikan ukuran logo gambar */
+            .partner-logo-img {
+                max-height: 40px;
+                width: auto;
+                object-fit: contain;
+            }
+        </style>
+
+        <div class="container py-4">
+            <div class="row align-items-center mb-5">
+                <div class="col-12">
+                    <div class="cyber-card no-glow p-4 p-md-5">
+                        <h5 class="fw-bold mb-2 text-center text-white">Klien & Partner Kerja Sama</h5>
+                        <p class="text-secondary small text-center mb-4">Didukung oleh berbagai instansi, UMKM, dan komunitas terpercaya</p>
+                        
+                        <div class="row g-3 justify-content-center">
+                            <!-- Partner 1 -->
+                            <div class="col-6 col-md-3">
+                                <div class="p-3 border border-secondary border-opacity-25 rounded-3 text-center bg-black bg-opacity-40 h-100 d-flex flex-column align-items-center justify-content-center">
+                                    <!-- Ganti src dengan path logo Anda -->
+                                    <img src="assetsfoto/logo1.png" alt="Logo UMKM Mandiri Solo" class="partner-logo-img mb-2">
+                                    <span class="fw-semibold small text-white">UMKM Mandiri Solo</span>
                                 </div>
-                                <div class="col-6 col-md-3">
-                                    <div class="p-3 border border-secondary border-opacity-25 rounded-3 text-center bg-black bg-opacity-40 h-100 d-flex flex-column align-items-center justify-content-center">
-                                        <div class="fs-3 mb-2" style="color: #c084fc;"><i class="fa-solid fa-users-rectangle"></i></div>
-                                        <span class="fw-semibold small text-white">Komunitas Kreator Muda</span>
-                                    </div>
+                            </div>
+                            <!-- Partner 2 -->
+                            <div class="col-6 col-md-3">
+                                <div class="p-3 border border-secondary border-opacity-25 rounded-3 text-center bg-black bg-opacity-40 h-100 d-flex flex-column align-items-center justify-content-center">
+                                    <!-- Ganti src dengan path logo Anda -->
+                                    <img src="assetsfoto/logo2.png" alt="Logo Komunitas Kreator Muda" class="partner-logo-img mb-2">
+                                    <span class="fw-semibold small text-white">Komunitas Kreator Muda</span>
                                 </div>
-                                <div class="col-6 col-md-3">
-                                    <div class="p-3 border border-secondary border-opacity-25 rounded-3 text-center bg-black bg-opacity-40 h-100 d-flex flex-column align-items-center justify-content-center">
-                                        <div class="text-success fs-3 mb-2"><i class="fa-solid fa-graduation-cap"></i></div>
-                                        <span class="fw-semibold small text-white">Kampus Digital Nusantara</span>
-                                    </div>
+                            </div>
+                            <!-- Partner 3 -->
+                            <div class="col-6 col-md-3">
+                                <div class="p-3 border border-secondary border-opacity-25 rounded-3 text-center bg-black bg-opacity-40 h-100 d-flex flex-column align-items-center justify-content-center">
+                                    <!-- Ganti src dengan path logo Anda -->
+                                    <img src="assetsfoto/logo3.png" alt="Logo Kampus Digital Nusantara" class="partner-logo-img mb-2">
+                                    <span class="fw-semibold small text-white">Kampus Digital Nusantara</span>
                                 </div>
-                                <div class="col-6 col-md-3">
-                                    <div class="p-3 border border-secondary border-opacity-25 rounded-3 text-center bg-black bg-opacity-40 h-100 d-flex flex-column align-items-center justify-content-center">
-                                        <div class="text-warning fs-3 mb-2"><i class="fa-solid fa-clapperboard"></i></div>
-                                        <span class="fw-semibold small text-white">Studio Konten Kreatif</span>
-                                    </div>
+                            </div>
+                            <!-- Partner 4 -->
+                            <div class="col-6 col-md-3">
+                                <div class="p-3 border border-secondary border-opacity-25 rounded-3 text-center bg-black bg-opacity-40 h-100 d-flex flex-column align-items-center justify-content-center">
+                                    <!-- Ganti src dengan path logo Anda -->
+                                    <img src="assetsfoto/logo4.png" alt="Logo Studio Konten Kreatif" class="partner-logo-img mb-2">
+                                    <span class="fw-semibold small text-white">Studio Konten Kreatif</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+        </section>
 
                 <!-- Profil Kurator & Editor -->
                 <div class="mt-5">
-                    <div class="text-center mb-4">
-                        <h3 class="fw-bold text-white">Profil Kurator & Editor Tim</h3>
-                        <p class="text-muted small">Para praktisi yang mendedikasikan keahliannya untuk pengembangan ekosistem ini</p>
-                    </div>
-                    <div class="row g-4">
-                        <div class="col-md-4">
-                            <div class="cyber-card h-100 text-center p-4">
-                                <div class="pt-2 pb-3">
-                                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" class="rounded-circle shadow-sm border border-2 border-info object-fit-cover" style="width: 95px; height: 95px;" alt="Rian Pratama">
-                                </div>
-                                <h5 class="fw-bold mb-1 text-white">Rian Pratama, S.Mn.</h5>
-                                <span class="badge bg-info bg-opacity-15 text-info mb-3 px-3 py-1 rounded-pill">Lead Product & Strategy</span>
-                                <p class="text-secondary small mb-0">Praktisi bisnis digital dan pemerhati strategi UMKM yang fokus pada efisiensi kerja kreator.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="cyber-card h-100 text-center p-4">
-                                <div class="pt-2 pb-3">
-                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" class="rounded-circle shadow-sm border border-2 border-purple object-fit-cover" style="width: 95px; height: 95px; border-color: #c084fc !important;" alt="Dinda Kirana">
-                                </div>
-                                <h5 class="fw-bold mb-1 text-white">Dinda Kirana, S.Kom.</h5>
-                                <span class="badge mb-3 px-3 py-1 rounded-pill" style="background-color: rgba(192, 132, 252, 0.15); color: #c084fc;">Lead UI/UX & Developer</span>
-                                <p class="text-secondary small mb-0">Pengembang antarmuka web dan aplikasi seluler yang berdedikasi menciptakan pengalaman interaktif.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="cyber-card h-100 text-center p-4">
-                                <div class="pt-2 pb-3">
-                                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" class="rounded-circle shadow-sm border border-2 border-success object-fit-cover" style="width: 95px; height: 95px;" alt="Ahmad Fauzi">
-                                </div>
-                                <h5 class="fw-bold mb-1 text-white">Ahmad Fauzi, M.I.Kom.</h5>
-                                <span class="badge bg-success bg-opacity-15 text-success mb-3 px-3 py-1 rounded-pill">Content & Media Specialist</span>
-                                <p class="text-secondary small mb-0">Spesialis komunikasi media sosial dan riset tren konten organik yang berpengampingan langsung.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <style>
+        /* Mengunci card profil agar statis dan tanpa animasi/cahaya hover */
+        .cyber-card.no-glow,
+        .cyber-card.no-glow:hover,
+        .cyber-card.no-glow:focus {
+            transform: none !important;
+            box-shadow: none !important;
+            border-color: rgba(255, 255, 255, 0.08) !important;
+        }
+        .cyber-card.no-glow::before,
+        .cyber-card.no-glow::after,
+        .cyber-card.no-glow:hover::before,
+        .cyber-card.no-glow:hover::after {
+            opacity: 1 !important;
+            visibility: visible !important;
+            transition: none !important;
+        }
+        </style>
 
+        <div class="text-center mb-4">
+        <h3 class="fw-bold text-white">Profil Kurator & Editor Tim</h3>
+        <p class="text-secondary small text-center mb-4">Para praktisi yang mendedikasikan keahliannya untuk pengembangan ekosistem ini</p>
+        </div>
+        <div class="row g-4">
+        <div class="col-md-4">
+            <div class="cyber-card no-glow h-100 text-center p-4">
+                <div class="pt-2 pb-3">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" class="rounded-circle shadow-sm border border-2 border-info object-fit-cover" style="width: 95px; height: 95px;" alt="Rian Pratama">
+                </div>
+                <h5 class="fw-bold mb-1 text-white">Rian Pratama, S.Mn.</h5>
+                <span class="badge bg-info bg-opacity-15 text-info mb-3 px-3 py-1 rounded-pill">Lead Product & Strategy</span>
+                <p class="text-secondary small mb-0">Praktisi bisnis digital dan pemerhati strategi UMKM yang fokus pada efisiensi kerja kreator.</p>
             </div>
-        </section>
+        </div>
+        <div class="col-md-4">
+            <div class="cyber-card no-glow h-100 text-center p-4">
+                <div class="pt-2 pb-3">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" class="rounded-circle shadow-sm border border-2 border-purple object-fit-cover" style="width: 95px; height: 95px; border-color: #c084fc !important;" alt="Dinda Kirana">
+                </div>
+                <h5 class="fw-bold mb-1 text-white">Dinda Kirana, S.Kom.</h5>
+                <span class="badge mb-3 px-3 py-1 rounded-pill" style="background-color: rgba(192, 132, 252, 0.15); color: #c084fc;">Lead UI/UX & Developer</span>
+                <p class="text-secondary small mb-0">Pengembang antarmuka web dan aplikasi seluler yang berdedikasi menciptakan pengalaman interaktif.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="cyber-card no-glow h-100 text-center p-4">
+                <div class="pt-2 pb-3">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" class="rounded-circle shadow-sm border border-2 border-success object-fit-cover" style="width: 95px; height: 95px;" alt="Ahmad Fauzi">
+                </div>
+                <h5 class="fw-bold mb-1 text-white">Ahmad Fauzi, M.I.Kom.</h5>
+                <span class="badge bg-success bg-opacity-15 text-success mb-3 px-3 py-1 rounded-pill">Content & Media Specialist</span>
+                <p class="text-secondary small mb-0">Spesialis komunikasi media sosial dan riset tren konten organik yang berpengampingan langsung.</p>
+            </div>
+        </div>
+    </div>
+</div>
 
         <!-- BAGIAN DOWNLOAD APK -->
         <section class="py-5">
-            <div class="container py-4">
-                <div class="row justify-content-center">
-                    <div class="col-lg-8">
-                        <div class="download-cyber-box p-4 p-md-5 text-white text-center">
-                            
-                            <div class="mb-4 position-relative d-inline-block">
-                                <div class="position-absolute top-50 start-50 translate-middle rounded-circle bg-info opacity-25" style="width: 90px; height: 90px; filter: blur(20px);"></div>
-                                <div class="p-3 rounded-4 shadow-lg border border-info border-opacity-50 d-inline-flex align-items-center justify-content-center text-white floating-element" style="background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple)); width: 75px; height: 75px; font-size: 2rem;">
-                                    <i class="fa-solid fa-mobile-screen-button"></i>
-                                </div>
-                            </div>
-
-                            <div>
-                                <span class="badge bg-white text-dark px-3 py-1 rounded-pill mb-3 fw-bold small">Eksklusif Akses Langsung</span>
-                            </div>
-
-                            <h3 class="fw-bold display-6 mb-3 text-white">Aktivitas Digital APK</h3>
-                            
-                            <p class="text-white-50 small mb-4 col-md-10 mx-auto" style="line-height: 1.7;">
-                                Nikmati pengalaman produktivitas dalam genggaman. File APK terenkripsi dikirim secara privat, aman, dan langsung ke WhatsApp Anda.
-                            </p>
-
-                            <div class="mb-4">
-                                <div class="d-inline-flex align-items-center gap-2 px-3 py-2 rounded-pill bg-black bg-opacity-50 border border-success border-opacity-50 text-success small">
-                                    <i class="fa-solid fa-shield-halved"></i> 
-                                    <span>100% Aman, Terverifikasi & Bebas Virus</span>
-                                </div>
-                            </div>
-
-                            <div>
-                                <a href="https://wa.me/6285732783289?text=Halo%2C%20saya%20ingin%20mendapatkan%20file%20APK%20Aktivitas%20Digital." target="_blank" class="btn btn-neon btn-lg rounded-pill px-5 py-3 shadow-lg w-100 w-md-auto text-white">
-                                    <i class="fa-brands fa-whatsapp me-2 fs-5"></i> Dapatkan APK via WhatsApp
-                                </a>
-                            </div>
-
+    <div class="container py-4">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="download-cyber-box p-4 p-md-5 text-white text-center">
+                    
+                    <!-- Ikon WhatsApp Menggantikan Ikon HP -->
+                    <div class="mb-4 position-relative d-inline-block">
+                        <div class="position-absolute top-50 start-50 translate-middle rounded-circle bg-success opacity-25" style="width: 90px; height: 90px; filter: blur(20px);"></div>
+                        <div class="p-3 rounded-4 shadow-lg border border-success border-opacity-50 d-inline-flex align-items-center justify-content-center text-white" style="background: linear-gradient(135deg, #25D366, #128C7E); width: 75px; height: 75px; font-size: 2rem;">
+                            <i class="fa-brands fa-whatsapp"></i>
                         </div>
                     </div>
+
+                    <!-- Badge Info -->
+                    <div>
+                        <span class="badge bg-white text-dark px-3 py-1 rounded-pill mb-3 fw-bold small">Akses Langsung & Aman</span>
+                    </div>
+
+                    <!-- Judul & Deskripsi yang Lebih Clean -->
+                    <h3 class="fw-bold display-6 mb-3 text-white">Dapatkan File APK</h3>
+                    
+                    <p class="text-white-50 small mb-4 col-md-10 mx-auto" style="line-height: 1.7;">
+                        Nikmati pengalaman produktivitas dalam genggaman. File aplikasi terenkripsi dikirim secara privat dan instan langsung ke WhatsApp Anda.
+                    </p>
+
+                    <!-- Tombol Aksi Utama -->
+                    <div>
+                        <a href="https://wa.me/6285732783289?text=Halo%2C%20saya%20ingin%20mendapatkan%20file%20APK%20Aktivitas%20Digital." target="_blank" class="btn btn-success btn-lg rounded-pill px-5 py-3 shadow-lg w-100 w-md-auto text-white fw-semibold" style="background-color: #25D366; border: none;">
+                            <i class="fa-brands fa-whatsapp me-2 fs-5"></i> Kirim via WhatsApp Sekarang
+                        </a>
+                    </div>
+
                 </div>
             </div>
-        </section>
+        </div>
     </div>
+</section>
+
 
     <!-- ================= PAGE 2: SERVICES ================= -->
     <div id="page-services" class="page-content">
@@ -659,8 +823,6 @@
                 </div>
             </div>
 
-        </div>
-    </div>
 
     <!-- ================= PAGE 3: ABOUT US ================= -->
     <div id="page-about" class="page-content">
