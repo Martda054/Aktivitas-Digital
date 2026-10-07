@@ -267,6 +267,14 @@
         footer a:hover {
             color: var(--neon-cyan);
         }
+
+        /* Pengaturan Tampilan Halaman Single-Page */
+.page-content {
+    display: none;
+}
+.page-content.active-page {
+    display: block;
+}
     </style>
 </head>
 <body>
@@ -287,25 +295,25 @@
             <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav align-items-lg-center gap-lg-2 my-2 my-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" onclick="switchPage('home')" id="nav-home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="switchPage('services')" id="nav-services">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="switchPage('about')" id="nav-about">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="switchPage('blog')" id="nav-blog">Blog</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="switchPage('contact')" id="nav-contact">Contact</a>
-                    </li>
-                </ul>
-            </div>
+            <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center gap-3">
+                <li class="nav-item">
+                    <a class="nav-link active" id="nav-home" href="#" onclick="switchPage('home')">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="nav-services" href="#" onclick="switchPage('services')">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="nav-about" href="#" onclick="switchPage('about')">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="nav-blog" href="#" onclick="switchPage('blog')">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="nav-contact" href="#" onclick="switchPage('contact')">Contact</a>
+                </li>
+            </ul>
+        </div>
         </div>
     </nav>
 
@@ -647,7 +655,7 @@
         <h3 class="fw-bold text-white">Profil Kurator & Editor Tim</h3>
         <p class="text-secondary small text-center mb-4">Para praktisi yang mendedikasikan keahliannya untuk pengembangan ekosistem ini</p>
         </div>
-        <div class="row g-4">
+    <div class="row g-4">
         <div class="col-md-4">
             <div class="cyber-card no-glow h-100 text-center p-4">
                 <div class="pt-2 pb-3">
@@ -720,7 +728,6 @@
         </div>
     </div>
 </section>
-
 
     <!-- ================= PAGE 2: SERVICES ================= -->
     <div id="page-services" class="page-content">
@@ -822,7 +829,6 @@
                     </div>
                 </div>
             </div>
-
 
     <!-- ================= PAGE 3: ABOUT US ================= -->
     <div id="page-about" class="page-content">
@@ -1032,6 +1038,36 @@
     </footer>
 
     <!-- Bootstrap 5 JS Bundle -->
+    <script>
+    function switchPage(pageId) {
+        // Sembunyikan semua halaman
+        const pages = document.querySelectorAll('.page-content');
+        pages.forEach(page => {
+            page.classList.remove('active-page');
+        });
+
+        // Hapus status aktif dari semua menu navbar
+        const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+        });
+
+        // Tampilkan halaman yang dituju
+        const targetPage = document.getElementById('page-' + pageId);
+        if (targetPage) {
+            targetPage.classList.add('active-page');
+        }
+
+        // Tandai menu navbar yang aktif
+        const targetNav = document.getElementById('nav-' + pageId);
+        if (targetNav) {
+            targetNav.classList.add('active');
+        }
+
+        // Gulir otomatis ke atas
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+</script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Script SPA Tab Switcher & Interactive Particle Canvas -->
