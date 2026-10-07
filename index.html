@@ -333,20 +333,22 @@
         <!-- Services Summary -->
     <section class="py-5 position-relative">
         <style>
+            /* Mengunci card agar tidak ada animasi, efek hover, atau perubahan border */
+            .cyber-card.no-glow,
             .cyber-card.no-glow:hover,
             .cyber-card.no-glow:focus {
                 transform: none !important;
                 box-shadow: none !important;
-                border-color: inherit !important;
+                border-color: rgba(255, 255, 255, 0.08) !important;
             }
-            /* Mengunci efek/warna garis di bagian atas card agar tetap stay */
+            
+            /* Memaksa garis atas pada card selalu tampil terang (stay) secara permanen */
             .cyber-card.no-glow::before,
             .cyber-card.no-glow::after,
             .cyber-card.no-glow:hover::before,
             .cyber-card.no-glow:hover::after {
-                /* Sesuaikan opacity atau warna jika diperlukan agar tetap stabil */
-                opacity: 0.7 !important; 
-                filter: none !important;
+                opacity: 1 !important;
+                visibility: visible !important;
                 transition: none !important;
             }
         </style>
