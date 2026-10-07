@@ -333,10 +333,16 @@
         <!-- Services Summary -->
     <section class="py-5 position-relative">
         <style>
-            .cyber-card.no-glow:hover {
+            .cyber-card.no-glow:hover,
+            .cyber-card.no-glow:focus {
                 transform: none !important;
                 box-shadow: none !important;
-                border-color: inherit !important;
+                border-color: rgba(255, 255, 255, 0.12) !important; /* Sesuaikan dengan warna border asli card Anda */
+            }
+            .cyber-card.no-glow:hover::before,
+            .cyber-card.no-glow:hover::after {
+                opacity: 0 !important;
+                display: none !important;
             }
         </style>
         <div class="container py-4">
