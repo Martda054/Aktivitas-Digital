@@ -515,36 +515,36 @@
 
                 <!-- BARIS BAWAH: 2 Card Video -->
                 <div>
-                    <h3 class="h5 fw-bold text-white mb-3"><i class="fa-solid fa-video me-2" style="color: #c084fc;"></i> Dokumentasi Video</h3>
-                    <div class="row g-4">
-                        <div class="col-md-6">
-                            <div class="cyber-card no-glow h-100">
-                                <div class="ratio ratio-16x9 bg-dark">
-                                    <iframe src="assestsvideo/portoV1.mp4" title="Pelatihan Kampus" allowfullscreen class="border-0"></iframe>
-                                </div>
-                                <div class="p-4">
-                                    <span class="badge mb-2 px-3 py-1 rounded-pill fw-semibold" style="background-color: rgba(0, 180, 180, 0.726); color: #ffffff;">Vokasi & Kampus</span>
-                                    <h4 class="h6 fw-bold mt-1 text-white">Pelatihan Content Planner Mahasiswa</h4>
-                                    <p class="text-secondary small mb-0">Workshop pembuatan strategi konten media sosial bersama mahasiswa vokasi.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="cyber-card no-glow h-100">
-                                <div class="ratio ratio-16x9 bg-dark">
-                                    <iframe src="assestsvideo/portoV1.mp4" title="Workshop Lanjutan" allowfullscreen class="border-0"></iframe>
-                                </div>
-                                <div class="p-4">
-                                    <span class="badge mb-2 px-3 py-1 rounded-pill fw-semibold" style="background-color: rgba(0, 180, 180, 0.726); color: #ffffff;">Seminar Umum</span>
-                                    <h4 class="h6 fw-bold mt-1 text-white">Masterclass Bisnis Digital Era AI</h4>
-                                    <p class="text-secondary small mb-0">Bedah tuntas pemanfaatan teknologi kecerdasan buatan untuk efisiensi bisnis.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+    <h3 class="h5 fw-bold text-white mb-3"><i class="fa-solid fa-video me-2" style="color: #c084fc;"></i> Dokumentasi Video</h3>
+    <div class="row g-4">
+        <!-- Video 1 -->
+        <div class="col-md-6">
+            <div class="cyber-card no-glow h-100">
+                <div class="ratio ratio-16x9 bg-dark">
+                    <video src="assestsvideo/portoV1.mp4" title="Pelatihan Kampus" controls preload="metadata" class="w-100 h-100 object-fit-cover"></video>
+                </div>
+                <div class="p-4">
+                    <span class="badge mb-2 px-3 py-1 rounded-pill fw-semibold" style="background-color: rgba(0, 180, 180, 0.726); color: #ffffff;">Vokasi & Kampus</span>
+                    <h4 class="h6 fw-bold mt-1 text-white">Pelatihan Content Planner Mahasiswa</h4>
+                    <p class="text-secondary small mb-0">Workshop pembuatan strategi konten media sosial bersama mahasiswa vokasi.</p>
                 </div>
             </div>
-        </section>
+        </div>
+        <!-- Video 2 -->
+        <div class="col-md-6">
+            <div class="cyber-card no-glow h-100">
+                <div class="ratio ratio-16x9 bg-dark">
+                    <video src="assestsvideo/portoV1.mp4" title="Workshop Lanjutan" controls preload="metadata" class="w-100 h-100 object-fit-cover"></video>
+                </div>
+                <div class="p-4">
+                    <span class="badge mb-2 px-3 py-1 rounded-pill fw-semibold" style="background-color: rgba(0, 180, 180, 0.726); color: #ffffff;">Seminar Umum</span>
+                    <h4 class="h6 fw-bold mt-1 text-white">Masterclass Bisnis Digital Era AI</h4>
+                    <p class="text-secondary small mb-0">Bedah tuntas pemanfaatan teknologi kecerdasan buatan untuk efisiensi bisnis.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
                 <!-- Bagian Klien & Partner -->
                 <section class="py-5">
@@ -620,6 +620,7 @@
             </div>
         </div>
         </section>
+        </div>
 
                 <!-- Profil Kurator & Editor -->
                 <div class="mt-5">
@@ -690,8 +691,8 @@
                     <!-- Ikon WhatsApp Menggantikan Ikon HP -->
                     <div class="mb-4 position-relative d-inline-block">
                         <div class="position-absolute top-50 start-50 translate-middle rounded-circle bg-success opacity-25" style="width: 90px; height: 90px; filter: blur(20px);"></div>
-                        <div class="p-3 rounded-4 shadow-lg border border-success border-opacity-50 d-inline-flex align-items-center justify-content-center text-white" style="background: linear-gradient(135deg, #25D366, #128C7E); width: 75px; height: 75px; font-size: 2rem;">
-                            <i class="fa-brands fa-whatsapp"></i>
+                        <div class="floating-element d-inline-block mb-3">
+                            <i class="fa-brands fa-whatsapp text-success fa-4x"></i>
                         </div>
                     </div>
 
@@ -707,9 +708,14 @@
                         Nikmati pengalaman produktivitas dalam genggaman. File aplikasi terenkripsi dikirim secara privat dan instan langsung ke WhatsApp Anda.
                     </p>
 
-                    <!-- Tombol Aksi Utama -->
+                    <!-- Tombol Aksi Utama dengan Animasi Hover -->
                     <div>
-                        <a href="https://wa.me/6285732783289?text=Halo%2C%20saya%20ingin%20mendapatkan%20file%20APK%20Aktivitas%20Digital." target="_blank" class="btn btn-success btn-lg rounded-pill px-5 py-3 shadow-lg w-100 w-md-auto text-white fw-semibold" style="background-color: #25D366; border: none;">
+                        <a href="https://wa.me/6285732783289?text=Halo%2C%20saya%20ingin%20mendapatkan%20file%20APK%20Aktivitas%20Digital." 
+                           target="_blank" 
+                           class="btn btn-success btn-lg rounded-pill px-5 py-3 shadow-lg w-100 w-md-auto text-white fw-semibold" 
+                           style="background-color: #25D366; border: none; transition: transform 0.25s ease, box-shadow 0.25s ease;"
+                           onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 1rem 2rem rgba(37, 211, 102, 0.3)'" 
+                           onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow=''">
                             <i class="fa-brands fa-whatsapp me-2 fs-5"></i> Kirim via WhatsApp Sekarang
                         </a>
                     </div>
@@ -719,7 +725,7 @@
         </div>
     </div>
 </section>
-    </div>
+</div>
 
     <!-- ================= PAGE 2: SERVICES ================= -->
     <div id="page-services" class="page-content">
@@ -753,26 +759,31 @@
 
             <!-- Promo Banner Neon -->
             <div class="row justify-content-center mb-5">
-                <div class="col-lg-10">
-                    <div class="promo-banner-neon p-4 p-md-5">
-                        <div class="row align-items-center">
-                            <div class="col-md-8 mb-3 mb-md-0">
-                                <div class="d-flex align-items-center gap-2 mb-2">
-                                    <span class="badge bg-danger px-2.5 py-1 small fw-bold rounded-pill"><i class="fa-solid fa-bolt me-1"></i> Penawaran Terbatas</span>
-                                    <span class="text-secondary small mb-0">Eksklusif Hari Ini</span>
-                                </div>
-                                <h3 class="fw-bold text-white h4 mb-2">Diskon Spesial 50% untuk Pengguna Baru APK</h3>
-                                <p class="text-secondary small mb-0" style="line-height: 1.6;">Dapatkan akses modul pilihan Anda, pembaruan otomatis seumur hidup, dan panduan privat langsung via WhatsApp.</p>
-                            </div>
-                            <div class="col-md-4 text-md-end">
-                                <a href="https://wa.me/6285732783289?text=Halo%2C%20saya%20ingin%20klaim%20diskon%2050%25%20untuk%20pembelian%20APK%20Aktivitas%20Digital." target="_blank" class="btn btn-neon rounded-pill px-4 py-2 w-100">
-                                    <i class="fa-brands fa-whatsapp me-1"></i> Klaim Promo Sekarang
-                                </a>
-                            </div>
-                        </div>
+    <div class="col-lg-10">
+        <div class="promo-banner-neon p-4 p-md-5">
+            <div class="row align-items-center">
+                <div class="col-md-8 mb-3 mb-md-0">
+                    <div class="d-flex align-items-center gap-2 mb-2">
+                        <span class="badge bg-danger px-2.5 py-1 small fw-bold rounded-pill"><i class="fa-solid fa-bolt me-1"></i> Penawaran Terbatas</span>
+                        <span class="text-secondary small mb-0">Eksklusif Hari Ini</span>
                     </div>
+                    <h3 class="fw-bold text-white h4 mb-2">Diskon Spesial 50% untuk Pengguna Baru APK</h3>
+                    <p class="text-secondary small mb-0" style="line-height: 1.6;">Dapatkan akses modul pilihan Anda, pembaruan otomatis seumur hidup, dan panduan privat langsung via WhatsApp.</p>
+                </div>
+                <div class="col-md-4 text-md-end">
+                    <a href="https://wa.me/6285732783289?text=Halo%2C%20saya%20ingin%20klaim%20diskon%2050%25%20untuk%20pembelian%20APK%20Aktivitas%20Digital." 
+                       target="_blank" 
+                       class="btn btn-success rounded-pill px-4 py-2.5 w-100 text-white fw-semibold shadow-lg" 
+                       style="background-color: #25D366; border: none; transition: transform 0.25s ease, box-shadow 0.25s ease;"
+                       onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 0.5rem 1.5rem rgba(37, 211, 102, 0.4)'" 
+                       onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow=''">
+                        <i class="fa-brands fa-whatsapp me-2 fs-5 align-middle"></i> Klaim Promo Sekarang
+                    </a>
                 </div>
             </div>
+        </div>
+    </div>
+</div>
 
             <!-- Grid 4 Layanan Pilihan -->
             <div class="row g-4 justify-content-center mb-5">
@@ -872,18 +883,18 @@
 
             <!-- Cerita / Narasi Pengantar Kreatif -->
             <div class="row justify-content-center mb-5">
-                <div class="col-lg-10">
-                    <div class="cyber-card p-4 p-md-5" style="border-left: 5px solid var(--neon-cyan);">
-                        <h3 class="h4 fw-bold text-white mb-3"><i class="fa-solid fa-quote-left text-info me-2 fs-3"></i> Berawal Dari Kebutuhan Nyata di Lapangan</h3>
-                        <p class="text-secondary mb-3" style="line-height: 1.8;">
-                            Di era digital yang bergerak super cepat ini, banyak pelaku UMKM, mahasiswa tingkat akhir, hingga kreator pemula sering kali merasa kewalahan. Tantangannya beragam: mulai dari bingung merancang konten harian, kesulitan menyusun strategi promosi, hingga keterbatasan akses terhadap perangkat penunjang yang praktis dan terjangkau.
-                        </p>
-                        <p class="text-secondary mb-0" style="line-height: 1.8;">
-                            Dari keresahan itulah <strong>Aktivitas Digital</strong> lahir. Kami merangkum riset mendalam, pengalaman pendampingan langsung di lapangan, serta integrasi teknologi AI mutakhir ke dalam sebuah ekosistem aplikasi yang dirancang khusus agar siapa saja—tanpa harus jago IT—bisa langsung mandiri dan berkembang.
-                        </p>
-                    </div>
-                </div>
-            </div>
+    <div class="col-lg-10">
+        <div class="cyber-card p-4 p-md-5" style="border-left: 5px solid var(--neon-cyan) !important; transition: none !important;">
+            <h3 class="h4 fw-bold text-white mb-3"><i class="fa-solid fa-quote-left text-info me-2 fs-3"></i> Berawal Dari Kebutuhan Nyata di Lapangan</h3>
+            <p class="text-secondary mb-3" style="line-height: 1.8;">
+                Di era digital yang bergerak super cepat ini, banyak pelaku UMKM, mahasiswa tingkat akhir, hingga kreator pemula sering kali merasa kewalahan. Tantangannya beragam: mulai dari bingung merancang konten harian, kesulitan menyusun strategi promosi, hingga keterbatasan akses terhadap perangkat penunjang yang praktis dan terjangkau.
+            </p>
+            <p class="text-secondary mb-0" style="line-height: 1.8;">
+                Dari keresahan itulah <strong>Aktivitas Digital</strong> lahir. Kami merangkum riset mendalam, pengalaman pendampingan langsung di lapangan, serta integrasi teknologi AI mutakhir ke dalam sebuah ekosistem aplikasi yang dirancang khusus agar siapa saja—tanpa harus jago IT—bisa langsung mandiri dan berkembang.
+            </p>
+        </div>
+    </div>
+</div>
 
             <!-- Visi, Misi & Filosofi Grid -->
             <div class="row g-4 mb-5">
@@ -952,47 +963,67 @@
 
     <!-- ================= PAGE 4: BLOG ================= -->
     <div id="page-blog" class="page-content">
-        <div class="container py-5">
-            <div class="text-center mb-5">
-                <span class="badge-cyber mb-2">Jurnal & Artikel</span>
-                <h2 class="fw-bold text-white">Blog & Wawasan Digital</h2>
-                <p class="text-secondary">Artikel edukatif seputar tips konten, strategi bisnis UMKM, dan produktivitas</p>
-            </div>
+        <style>
+    /* Pastikan elemen .cyber-card siap untuk transisi */
+    .cyber-card-hover {
+        transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+        will-change: transform; /* Optimasi performa animasi */
+    }
 
-            <div class="row g-4 mb-4">
-                <div class="col-md-4">
-                    <div class="cyber-card h-100 overflow-hidden">
-                        <div class="bg-info text-black p-3 text-center fw-bold small">Jurnal Kreator</div>
-                        <div class="p-4">
-                            <span class="text-muted small"><i class="fa-regular fa-calendar me-1"></i> 24 September 2026</span>
-                            <h4 class="h5 fw-bold mt-2 mb-3 text-white">Strategi Konten Organik untuk Meningkatkan Penjualan UMKM</h4>
-                            <p class="text-secondary small mb-0" style="line-height: 1.7;">Pelajari cara merancang konten Instagram dan TikTok yang mendatangkan pembeli secara konsisten.</p>
-                        </div>
+    /* Efek saat kursor di atasnya */
+    .cyber-card-hover:hover {
+        transform: translateY(-6px) !important;
+        box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3) !important;
+        z-index: 1; /* Pastikan card berada di atas card lain saat terangkat */
+    }
+</style>
+    <div class="container py-5">
+        <div class="text-center mb-5">
+            <span class="badge-cyber mb-2">Jurnal & Artikel</span>
+            <h2 class="fw-bold text-white">Blog & Wawasan Digital</h2>
+            <p class="text-secondary">Artikel edukatif seputar tips konten, strategi bisnis UMKM, dan produktivitas</p>
+        </div>
+
+        <div class="row g-4 mb-4">
+            <!-- Card 1 -->
+            <div class="col-md-4">
+                <!-- TAMBAHKAN KELAS: cyber-card-hover -->
+                <div class="cyber-card cyber-card-hover h-100 overflow-hidden">
+                    <div class="bg-info text-black p-3 text-center fw-bold small">Jurnal Kreator</div>
+                    <div class="p-4">
+                        <span class="text-secondarysmall"><i class="fa-regular fa-calendar me-1"></i> 24 September 2026</span>
+                        <h4 class="h5 fw-bold mt-2 mb-3 text-white">Strategi Konten Organik untuk Meningkatkan Penjualan UMKM</h4>
+                        <p class="text-secondary small mb-0" style="line-height: 1.7;">Pelajari cara merancang konten Instagram dan TikTok yang mendatangkan pembeli secara konsisten.</p>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="cyber-card h-100 overflow-hidden">
-                        <div class="text-white p-3 text-center fw-bold small" style="background-color: #7928ca;">Mahasiswa & Pelajar</div>
-                        <div class="p-4">
-                            <span class="text-muted small"><i class="fa-regular fa-calendar me-1"></i> 20 September 2026</span>
-                            <h4 class="h5 fw-bold mt-2 mb-3 text-white">Membangun Portofolio Kreatif Sejak Masa Kuliah</h4>
-                            <p class="text-secondary small mb-0" style="line-height: 1.7;">Tips praktis bagi mahasiswa dan pelajar dalam mengemas tugas kuliah menjadi portofolio siap kerja.</p>
-                        </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="col-md-4">
+                <!-- TAMBAHKAN KELAS: cyber-card-hover -->
+                <div class="cyber-card cyber-card-hover h-100 overflow-hidden">
+                    <div class="text-white p-3 text-center fw-bold small" style="background-color: #7928ca;">Mahasiswa & Pelajar</div>
+                    <div class="p-4">
+                        <span class="text-secondary small"><i class="fa-regular fa-calendar me-1"></i> 20 September 2026</span>
+                        <h4 class="h5 fw-bold mt-2 mb-3 text-white">Membangun Portofolio Kreatif Sejak Masa Kuliah</h4>
+                        <p class="text-secondary small mb-0" style="line-height: 1.7;">Tips praktis bagi mahasiswa dan pelajar dalam mengemas tugas kuliah menjadi portofolio siap kerja.</p>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="cyber-card h-100 overflow-hidden">
-                        <div class="bg-dark text-white p-3 text-center fw-bold small border-bottom border-secondary">Teknologi & AI</div>
-                        <div class="p-4">
-                            <span class="text-muted small"><i class="fa-regular fa-calendar me-1"></i> 15 September 2026</span>
-                            <h4 class="h5 fw-bold mt-2 mb-3 text-white">Pemanfaatan AI untuk Efisiensi Waktu Kreator Konten</h4>
-                            <p class="text-secondary small mb-0" style="line-height: 1.7;">Bagaimana kecerdasan buatan membantu mempercepat proses brainstorming ide harian.</p>
-                        </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="col-md-4">
+                <!-- TAMBAHKAN KELAS: cyber-card-hover -->
+                <div class="cyber-card cyber-card-hover h-100 overflow-hidden">
+                    <div class="bg-dark text-white p-3 text-center fw-bold small border-bottom border-secondary">Teknologi & AI</div>
+                    <div class="p-4">
+                        <span class="text-secondary small"><i class="fa-regular fa-calendar me-1"></i> 15 September 2026</span>
+                        <h4 class="h5 fw-bold mt-2 mb-3 text-white">Pemanfaatan AI untuk Efisiensi Waktu Kreator Konten</h4>
+                        <p class="text-secondary small mb-0" style="line-height: 1.7;">Bagaimana kecerdasan buatan membantu mempercepat proses brainstorming ide harian.</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
     <!-- ================= PAGE 5: CONTACT ================= -->
     <div id="page-contact" class="page-content">
@@ -1007,10 +1038,15 @@
                         <p class="text-secondary mb-4" style="line-height: 1.8;">
                             Karena aplikasi ini didistribusikan secara personal, silakan hubungi tim kami melalui WhatsApp untuk pemesanan, konsultasi, dan pengiriman file APK langsung ke perangkat Anda.
                         </p>
-                        <a href="https://wa.me/6285732783289?text=Halo%2C%20saya%20ingin%20membeli%20dan%20mendapatkan%20file%20APK%20Aktivitas%20Digital." target="_blank" class="btn btn-neon btn-lg rounded-pill px-5 py-3 shadow">
-                            <i class="fa-brands fa-whatsapp me-2"></i> Hubungi WhatsApp untuk Pembelian APK
+                        <a href="https://wa.me/6285732783289?text=Halo%2C%20saya%20ingin%20membeli%20dan%20mendapatkan%20file%20APK%20Aktivitas%20Digital." 
+                           target="_blank" 
+                           class="btn btn-success btn-lg rounded-pill px-5 py-3 shadow-lg text-white fw-semibold" 
+                           style="background-color: #25D366; border: none; transition: transform 0.25s ease, box-shadow 0.25s ease;"
+                           onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 1rem 2rem rgba(37, 211, 102, 0.4)'" 
+                           onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow=''">
+                            <i class="fa-brands fa-whatsapp me-2 fs-5 align-middle"></i> Hubungi WhatsApp untuk Pembelian APK
                         </a>
-                        <p class="text-muted small mt-3">Respon cepat setiap hari pukul 08.00 - 20.00 WIB</p>
+                        <p class="text-secondary small mt-3">Respon cepat setiap hari pukul 08.00 - 20.00 WIB</p>
                     </div>
                 </div>
             </div>
