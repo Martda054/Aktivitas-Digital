@@ -534,7 +534,7 @@
         <div class="col-md-6">
             <div class="cyber-card no-glow h-100">
                 <div class="ratio ratio-16x9 bg-dark">
-                    <video src="assestsvideo/portoV1.mp4" title="Workshop Lanjutan" controls preload="metadata" class="w-100 h-100 object-fit-cover"></video>
+                    <video src="assestsvideo/portoV2.mp4" title="Workshop Lanjutan" controls preload="metadata" class="w-100 h-100 object-fit-cover"></video>
                 </div>
                 <div class="p-4">
                     <span class="badge mb-2 px-3 py-1 rounded-pill fw-semibold" style="background-color: rgba(0, 180, 180, 0.726); color: #ffffff;">Seminar Umum</span>
@@ -573,6 +573,31 @@
                 object-fit: contain;
             }
         </style>
+        <style>
+    /* Definisi variabel warna untuk masing-masing card mitra */
+    .partner-card-1 {
+        --card-color: #8b5cf6; /* Ungu */
+        --card-bg-opacity: rgb(138, 92, 246);
+    }
+    .partner-card-2 {
+         --card-color: #10b981; /* Hijau */
+        --card-bg-opacity: rgb(16, 185, 129);
+    }
+    .partner-card-3 {
+        --card-color: #f59e0b; /* Biru */
+        --card-bg-opacity: rgb(245, 159, 11);
+    }
+    .partner-card-4 {
+        --card-color: #3b82f6; /* Oranye/Amber */
+        --card-bg-opacity: rgb(59, 131, 246);
+    }
+
+    /* Styling umum untuk card mitra (tanpa animasi hover) */
+    .custom-partner-card {
+        background: linear-gradient(135deg, var(--card-bg-opacity), rgba(15, 23, 42, 0.85));
+        border: 1px solid var(--card-color);
+    }
+</style>
 
         <div class="container py-4">
             <div class="row align-items-center mb-5">
@@ -581,40 +606,39 @@
                         <h5 class="fw-bold mb-2 text-center text-white">Klien & Partner Kerja Sama</h5>
                         <p class="text-secondary small text-center mb-4">Didukung oleh berbagai instansi, UMKM, dan komunitas terpercaya</p>
                         
-                        <div class="row g-3 justify-content-center">
-                            <!-- Partner 1 -->
-                            <div class="col-6 col-md-3">
-                                <div class="p-3 border border-secondary border-opacity-25 rounded-3 text-center bg-black bg-opacity-40 h-100 d-flex flex-column align-items-center justify-content-center">
-                                    <!-- Ganti src dengan path logo Anda -->
-                                    <img src="assetsfoto/logo1.png" alt="Logo UMKM Mandiri Solo" class="partner-logo-img mb-2">
-                                    <span class="fw-semibold small text-white">UMKM Mandiri Solo</span>
-                                </div>
-                            </div>
-                            <!-- Partner 2 -->
-                            <div class="col-6 col-md-3">
-                                <div class="p-3 border border-secondary border-opacity-25 rounded-3 text-center bg-black bg-opacity-40 h-100 d-flex flex-column align-items-center justify-content-center">
-                                    <!-- Ganti src dengan path logo Anda -->
-                                    <img src="assetsfoto/logo2.png" alt="Logo Komunitas Kreator Muda" class="partner-logo-img mb-2">
-                                    <span class="fw-semibold small text-white">Komunitas Kreator Muda</span>
-                                </div>
-                            </div>
-                            <!-- Partner 3 -->
-                            <div class="col-6 col-md-3">
-                                <div class="p-3 border border-secondary border-opacity-25 rounded-3 text-center bg-black bg-opacity-40 h-100 d-flex flex-column align-items-center justify-content-center">
-                                    <!-- Ganti src dengan path logo Anda -->
-                                    <img src="assetsfoto/logo3.png" alt="Logo Kampus Digital Nusantara" class="partner-logo-img mb-2">
-                                    <span class="fw-semibold small text-white">Kampus Digital Nusantara</span>
-                                </div>
-                            </div>
-                            <!-- Partner 4 -->
-                            <div class="col-6 col-md-3">
-                                <div class="p-3 border border-secondary border-opacity-25 rounded-3 text-center bg-black bg-opacity-40 h-100 d-flex flex-column align-items-center justify-content-center">
-                                    <!-- Ganti src dengan path logo Anda -->
-                                    <img src="assetsfoto/logo4.png" alt="Logo Studio Konten Kreatif" class="partner-logo-img mb-2">
-                                    <span class="fw-semibold small text-white">Studio Konten Kreatif</span>
-                                </div>
-                            </div>
-                        </div>
+                        <div class="row g-4">
+    <!-- Partner 1 -->
+    <div class="col-6 col-md-3">
+        <div class="partner-card-1 custom-partner-card p-3 rounded-3 text-center text-white h-100 d-flex flex-column align-items-center justify-content-center">
+            <img src="assetsfoto/logoB1.png" alt="Logo UMKM Mandiri Solo" class="partner-logo-img mb-2" style="max-height: 100px;">
+            <span class="fw-semibold small">UMKM Mandiri Solo</span>
+        </div>
+    </div>
+
+    <!-- Partner 2 -->
+    <div class="col-6 col-md-3">
+        <div class="partner-card-2 custom-partner-card p-3 rounded-3 text-center text-white h-100 d-flex flex-column align-items-center justify-content-center">
+            <img src="assetsfoto/logoB2.png" alt="Logo Komunitas Kreator Muda" class="partner-logo-img mb-2" style="max-height: 100px;">
+            <span class="fw-semibold small">Komunitas Kreator Muda</span>
+        </div>
+    </div>
+
+    <!-- Partner 3 -->
+    <div class="col-6 col-md-3">
+        <div class="partner-card-3 custom-partner-card p-3 rounded-3 text-center text-white h-100 d-flex flex-column align-items-center justify-content-center">
+            <img src="assetsfoto/logoB3.png" alt="Logo Kampus Digital Nusantara" class="partner-logo-img mb-2" style="max-height: 100px;">
+            <span class="fw-semibold small">Kampus Digital Nusantara</span>
+        </div>
+    </div>
+
+    <!-- Partner 4 -->
+    <div class="col-6 col-md-3">
+        <div class="partner-card-4 custom-partner-card p-3 rounded-3 text-center text-white h-100 d-flex flex-column align-items-center justify-content-center">
+            <img src="assetsfoto/logoB4.png" alt="Logo Studio Konten Kreatif" class="partner-logo-img mb-2" style="max-height: 100px;">
+            <span class="fw-semibold small">Studio Konten Kreatif</span>
+        </div>
+    </div>
+</div>
                     </div>
                 </div>
             </div>
