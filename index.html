@@ -307,6 +307,9 @@
                     <li class="nav-item">
                         <a class="nav-link" onclick="switchPage('contact')" id="nav-contact">Contact</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" onclick="switchPage('review')" id="nav-review">Review</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -1047,6 +1050,114 @@
     </div>
 </div>
 
+<!-- ================= TAMBAHAN HALAMAN: PAGE REVIEW ================= -->
+    <div id="page-review" class="page-content">
+        <style>
+            /* Mengunci card di halaman review agar statis dan tanpa animasi/cahaya hover */
+            #page-review .cyber-card,
+            #page-review .cyber-card:hover,
+            #page-review .cyber-card:focus {
+                transform: none !important;
+                box-shadow: none !important;
+                border-color: rgba(255, 255, 255, 0.08) !important;
+            }
+            #page-review .cyber-card::before,
+            #page-review .cyber-card::after,
+            #page-review .cyber-card:hover::before,
+            #page-review .cyber-card:hover::after {
+                opacity: 1 !important;
+                visibility: visible !important;
+                transition: none !important;
+            }
+        </style>
+        
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <span class="badge-cyber mb-2"><i class="fa-solid fa-star text-warning me-1"></i> Ulasan Pengguna</span>
+                <h2 class="fw-bold text-white display-6">Apa Kata Mereka Tentang Kami?</h2>
+                <p class="text-secondary col-lg-7 mx-auto">Berikut adalah ulasan, testimoni, dan penilaian dari berbagai kalangan pengguna, mulai dari pelaku UMKM hingga mahasiswa.</p>
+            </div>
+
+            <!-- Grid Testimonial Cards -->
+            <div class="row g-4">
+                <!-- Review 1 -->
+                <div class="col-md-4">
+                    <div class="cyber-card p-4 h-100 d-flex flex-column justify-content-between">
+                        <div>
+                            <div class="text-warning mb-3">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-secondary small mb-4" style="line-height: 1.7;">
+                                &ldquo;Platform ini sangat membantu bisnis UMKM saya dalam merencanakan konten media sosial. Fitur dan tools yang disediakan sangat mudah dipahami bahkan untuk pemula.&rdquo;
+                            </p>
+                        </div>
+                        <div class="d-flex align-items-center gap-3 pt-3 border-top border-secondary border-opacity-25">
+                            <div class="rounded-circle bg-info text-black fw-bold d-flex align-items-center justify-content-center" style="width: 45px; height: 45px;">MS</div>
+                            <div>
+                                <h6 class="fw-bold mb-0 text-white">Maya Sari</h6>
+                                <small class="text-secondary">Pemilik UMKM Kuliner Solo</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="col-md-4">
+                    <div class="cyber-card p-4 h-100 d-flex flex-column justify-content-between">
+                        <div>
+                            <div class="text-warning mb-3">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-secondary small mb-4" style="line-height: 1.7;">
+                                &ldquo;Sebagai mahasiswa tingkat akhir, materi dan panduan konten di sini sangat menginspirasi saya dalam menyusun portofolio digital yang profesional.&rdquo;
+                            </p>
+                        </div>
+                        <div class="d-flex align-items-center gap-3 pt-3 border-top border-secondary border-opacity-25">
+                            <div class="rounded-circle fw-bold d-flex align-items-center justify-content-center" style="width: 45px; height: 45px; background-color: #c084fc; color: #000;">RK</div>
+                            <div>
+                                <h6 class="fw-bold mb-0 text-white">Rian Kurniawan</h6>
+                                <small class="text-secondary">Mahasiswa Vokasi</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="col-md-4">
+                    <div class="cyber-card p-4 h-100 d-flex flex-column justify-content-between">
+                        <div>
+                            <div class="text-warning mb-3">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                            </div>
+                            <p class="text-secondary small mb-4" style="line-height: 1.7;">
+                                &ldquo;Pelayanan lewat WhatsApp sangat responsif dan ramah. File APK dikirim dengan aman dan langsung bisa digunakan untuk mendukung produktivitas harian.&rdquo;
+                            </p>
+                        </div>
+                        <div class="d-flex align-items-center gap-3 pt-3 border-top border-secondary border-opacity-25">
+                            <div class="rounded-circle bg-success text-white fw-bold d-flex align-items-center justify-content-center" style="width: 45px; height: 45px;">DS</div>
+                            <div>
+                                <h6 class="fw-bold mb-0 text-white">Dewi Lestari</h6>
+                                <small class="text-secondary">Content Creator Pemula</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- ================= PAGE 5: CONTACT ================= -->
     <div id="page-contact" class="page-content">
         <div class="container py-5 text-center">
@@ -1090,6 +1201,7 @@
                         <li><a onclick="switchPage('services')">Services</a></li>
                         <li><a onclick="switchPage('about')">About Us</a></li>
                         <li><a onclick="switchPage('blog')">Blog</a></li>
+                        <li><a onclick="switchPage('review')">Review</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-3 col-6">
